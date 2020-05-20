@@ -5,7 +5,6 @@
  */
 
 const Ajv = require('ajv');
-const mapModel = require('./mapModel');
 const modelPropMapSchema = require('./schemas/modelPropMap');
 
 /**
@@ -22,7 +21,11 @@ const mapModelProp = ($, modelPropMap) => {
 
   const { type: propType } = modelPropMap;
 
-  if (propType === 'model') return mapModel($, modelPropMap.model);
+  if (propType === 'model') {
+    /* eslint-disable global-require */
+    return require('./mapModel')($, modelPropMap.model);
+    /* eslint-enable global-require */
+  }
 
   const cast = (value) => {
     if (propType === 'number') return +value;

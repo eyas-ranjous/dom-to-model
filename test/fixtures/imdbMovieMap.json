@@ -48,6 +48,37 @@
       "selector": {
         "path": "#titleStoryLine > div:first-of-type p span"
       }
+    },
+    "boxOffice": {
+      "type": "model",
+      "model": {
+        "props": {
+          "budget": {
+            "type": "string",
+            "selector": {
+              "path": "#titleDetails .txt-block:nth-of-type(7)"
+            }
+          },
+          "oppeningWeekendUsa": {
+            "type": "string",
+            "selector": {
+              "path": "#titleDetails .txt-block:nth-of-type(8)"              
+            }
+          },
+          "grossUsa": {
+            "type": "string",
+            "selector": {
+              "path": "#titleDetails .txt-block:nth-of-type(9)"              
+            }
+          },
+          "grossWorldwide": {
+            "type": "string",
+            "selector": {
+              "path": "#titleDetails .txt-block:nth-of-type(10)"              
+            }
+          }
+        }
+      }
     }
   }
 }
