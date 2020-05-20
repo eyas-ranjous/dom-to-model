@@ -21,11 +21,9 @@ const mapModel = ($, modelMap) => {
   }
 
   const model = {};
-
   Object.entries(modelMap.props).forEach(([propName, propMap]) => {
     model[propName] = mapModelProp($, propMap);
   });
-
   return model;
 };
 
