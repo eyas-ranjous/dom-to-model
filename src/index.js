@@ -8,6 +8,5 @@ const fetchDom = require('./fetchDom');
 const mapModel = require('./mapModel');
 
 module.exports = (url, modelMap) => (
-  fetchDom(url || modelMap.url)
-  .then(($) =>  mapModel($, modelMap))
+  fetchDom(url || modelMap.url).then(($) => mapModel($, modelMap))
 );

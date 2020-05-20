@@ -1,6 +1,4 @@
 const { assert } = require('chai');
-const { JSDOM } = require('jsdom');
-const jquery = require('jquery');
 const imdbMovieMap = require('./fixtures/imdbMovieMap');
 const movieData = require('./fixtures/movie');
 const domToModel = require('../src/index');
