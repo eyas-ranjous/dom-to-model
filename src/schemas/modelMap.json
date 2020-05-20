@@ -1,4 +1,13 @@
 {
   "description": "model dom-map schema",
-  "type": "object"
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "props": {
+      "type": "object"
+    }
+  },
+  "required": ["props"]
 }
