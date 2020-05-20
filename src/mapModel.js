@@ -17,7 +17,7 @@ const modelMapSchema = require('./schemas/modelMap');
 const mapModel = ($, modelMap) => {
   const ajv = new Ajv();
   if (!ajv.validate(modelMapSchema, modelMap)) {
-    throw new Error(ajv.errors.map((e) => e.message).join(', '));
+    throw new Error(ajv.errors[0].message);
   }
 
   const model = {};

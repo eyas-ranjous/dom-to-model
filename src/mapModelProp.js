@@ -17,7 +17,7 @@ const modelPropMapSchema = require('./schemas/modelPropMap');
 const mapModelProp = ($, modelPropMap) => {
   const ajv = new Ajv();
   if (!ajv.validate(modelPropMapSchema, modelPropMap)) {
-    throw new Error(ajv.errors.map((e) => e.message).join(', '));
+    throw new Error(ajv.errors[0].message);
   }
 
   const { type: propType } = modelPropMap;
