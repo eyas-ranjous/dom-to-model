@@ -1,0 +1,53 @@
+{
+  "props": {
+    "id": {
+      "type": "string",
+      "selector": {
+        "path": ".title_block .title_bar_wrapper .ratings_wrapper .star-rating-widget",
+        "data": "tconst"
+      }
+    },
+    "title": {
+      "type": "string",
+      "selector": {
+        "path": ".title_block .title_bar_wrapper .titleBar .title_wrapper h1"
+      }
+    },
+    "originalTitle": {
+      "type": "string",
+      "selector": {
+        "path": ".title_wrapper .originalTitle"
+      }
+    },
+    "year": {
+      "type": "number",
+      "selector": {
+        "path": ".title_block .title_bar_wrapper .titleBar .title_wrapper #titleYear a"
+      }
+    },
+    "description": {
+      "type": "string",
+      "selector": {
+        "path": ".plot_summary_wrapper .summary_text"
+      }
+    },
+    "duration": {
+      "type": "string",
+      "selector": {
+        "path": ".title_wrapper .subtext time"
+      }
+    },
+    "releaseDate": {
+      "type": "string",
+      "selector": {
+        "path": ".title_wrapper .subtext a:nth-of-type(4)"
+      }
+    },
+    "storyLine": {
+      "type": "string",
+      "selector": {
+        "path": "#titleStoryLine > div:first-of-type p span"
+      }
+    }
+  }
+}
