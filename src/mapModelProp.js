@@ -1,7 +1,19 @@
+/**
+ * dom-to-model
+ * @copyright 2020 Eyas Ranjous <eyas.ranjous@gmail.com>
+ * @license ISC
+ */
+
 const Ajv = require('ajv');
 const mapModel = require('./mapModel');
 const modelPropMapSchema = require('./schemas/modelPropMap');
 
+/**
+ * @description gets a model prop value from dom
+ * @param {jQuery} $
+ * @param {object} modelPropMap
+ * @return {number|string|object}
+ */
 const mapModelProp = ($, modelPropMap) => {
   const ajv = new Ajv();
   if (!ajv.validate(modelPropMapSchema, modelPropMap)) {
