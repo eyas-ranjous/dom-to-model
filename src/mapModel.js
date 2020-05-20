@@ -20,12 +20,11 @@ const mapModel = ($, modelMap) => {
     throw new Error(ajv.errors.map((e) => e.message).join(', '));
   }
 
-  return Object
-    .entries(modelMap.props)
-    .reduce((model, [propName, propMap]) => ({
-      ...model,
-      ...{ [propName]: mapModelProp($, propMap) }
-    }), {});
+  const model = {};
+  Object.entries(modelMap.props).forEach(([propName, propMap]) => {
+    model[propName] = mapModelProp($, propMap);
+  });
+  return model;
 };
 
 module.exports = mapModel;
