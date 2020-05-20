@@ -9,7 +9,7 @@ const mapModelProp = require('./mapModelProp');
 const modelMapSchema = require('./schemas/modelMap');
 
 /**
- * @description gets a model prop value from dom
+ * @description gets a model object from dom
  * @param {jQuery} $
  * @param {object} modelMap
  * @return {object} the mapped model
