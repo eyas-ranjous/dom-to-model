@@ -1,0 +1,26 @@
+{
+  "description": "model prop dom-map schema",
+  "type": "object",
+  "properties": {
+    "propType": {
+      "type": "string",
+      "pattern": "[value|array|model]"
+    },
+    "selector": {
+      "type": "object",
+      "properties": {
+        "dataType": {
+          "type": "string",
+          "pattern": "[string|number|boolean]"
+        },
+        "path": {
+          "type": "string"
+        },
+        "dataAttr": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": ["propType", "selector"]
+}
