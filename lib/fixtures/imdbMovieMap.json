@@ -1,79 +1,91 @@
 {
   "props": {
     "id": {
-      "type": "string",
+      "propType": "value",
       "selector": {
+        "dataType": "string",
         "path": ".title_block .title_bar_wrapper .ratings_wrapper .star-rating-widget",
-        "data": "tconst"
+        "dataAttr": "tconst"
       }
     },
     "title": {
-      "type": "string",
+      "propType": "value",
       "selector": {
+        "dataType": "string",
         "path": ".title_block .title_bar_wrapper .titleBar .title_wrapper h1"
       }
     },
     "originalTitle": {
-      "type": "string",
+      "propType": "value",
       "selector": {
+        "dataType": "string",
         "path": ".title_wrapper .originalTitle"
       }
     },
     "year": {
-      "type": "number",
+      "propType": "value",
       "selector": {
+        "dataType": "number",
         "path": ".title_block .title_bar_wrapper .titleBar .title_wrapper #titleYear a"
       }
     },
     "description": {
-      "type": "string",
+      "propType": "value",
       "selector": {
+        "dataType": "string",
         "path": ".plot_summary_wrapper .summary_text"
       }
     },
     "duration": {
-      "type": "string",
+      "propType": "value",
       "selector": {
+        "dataType": "string",
         "path": ".title_wrapper .subtext time"
       }
     },
     "releaseDate": {
-      "type": "string",
+      "propType": "value",
       "selector": {
+        "dataType": "string",
         "path": ".title_wrapper .subtext a:nth-of-type(4)"
       }
     },
     "storyLine": {
-      "type": "string",
+      "propType": "value",
       "selector": {
+        "dataType": "string",
         "path": "#titleStoryLine > div:first-of-type p span"
       }
     },
     "boxOffice": {
-      "type": "model",
-      "model": {
+      "propType": "model",
+      "selector": {
         "props": {
           "budget": {
-            "type": "string",
+            "propType": "value",
             "selector": {
+              "dataType": "string",
               "path": "#titleDetails .txt-block:nth-of-type(7)"
             }
           },
           "oppeningWeekendUsa": {
-            "type": "string",
+            "propType": "value",
             "selector": {
+              "dataType": "string",
               "path": "#titleDetails .txt-block:nth-of-type(8)"              
             }
           },
           "grossUsa": {
-            "type": "string",
+            "propType": "value",
             "selector": {
+              "dataType": "string",
               "path": "#titleDetails .txt-block:nth-of-type(9)"              
             }
           },
           "grossWorldwide": {
-            "type": "string",
+            "propType": "value",
             "selector": {
+              "dataType": "string",
               "path": "#titleDetails .txt-block:nth-of-type(10)"              
             }
           }
