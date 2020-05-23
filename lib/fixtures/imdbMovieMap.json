@@ -60,6 +60,7 @@
     "boxOffice": {
       "propType": "model",
       "selector": {
+        "dataType": "object",
         "props": {
           "budget": {
             "propType": "value",
