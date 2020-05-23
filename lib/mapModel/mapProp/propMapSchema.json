@@ -11,14 +11,30 @@
       "properties": {
         "dataType": {
           "type": "string",
-          "pattern": "[string|number|boolean]"
+          "pattern": "[string|number|boolean|object]"
         },
         "path": {
           "type": "string"
         },
         "dataAttr": {
           "type": "string"
-        }
+        },
+        "props": {
+          "type": "object"
+        },
+        "if": {
+          "properties": {
+            "dataType": {
+              "const": "object"
+            }
+          }
+        },
+        "then": {
+          "required": ["props"]
+        },
+        "else": {
+          "required": ["path"]
+        } 
       }
     }
   },
