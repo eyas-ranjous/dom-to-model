@@ -6,37 +6,31 @@
       "type": "string",
       "pattern": "[value|array|model]"
     },
-    "selector": {
-      "type": "object",
-      "properties": {
-        "dataType": {
-          "type": "string",
-          "pattern": "[string|number|boolean|object]"
-        },
-        "path": {
-          "type": "string"
-        },
-        "dataAttr": {
-          "type": "string"
-        },
-        "props": {
-          "type": "object"
-        },
-        "if": {
-          "properties": {
-            "dataType": {
-              "const": "object"
-            }
-          }
-        },
-        "then": {
-          "required": ["props"]
-        },
-        "else": {
-          "required": ["path"]
-        } 
+    "dataType": {
+      "type": "string",
+      "pattern": "[string|number|boolean]"
+    },
+    "path": {
+      "type": "string"
+    },
+    "dataAttr": {
+      "type": "string"
+    },
+    "props": {
+      "type": "object"
+    }
+  },
+  "if": {
+    "properties": {
+      "propType": {
+        "const": "model"
       }
     }
   },
-  "required": ["propType", "selector"]
+  "then": {
+    "required": ["propType", "path", "props"]
+  },
+  "else": {
+    "required": ["propType", "dataType", "path"]
+  }
 }
