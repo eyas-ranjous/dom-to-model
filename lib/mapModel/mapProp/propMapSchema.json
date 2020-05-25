@@ -6,31 +6,34 @@
       "type": "string",
       "pattern": "[value|array|model]"
     },
-    "dataType": {
-      "type": "string",
-      "pattern": "[string|number|boolean]"
-    },
-    "path": {
-      "type": "string"
-    },
-    "dataAttr": {
-      "type": "string"
-    },
-    "props": {
-      "type": "object"
-    }
-  },
-  "if": {
-    "properties": {
-      "propType": {
-        "const": "model"
+    "map": {
+      "type": "object",
+      "properties": {
+        "dataType": {
+          "type": "string",
+          "pattern": "[string|number|boolean]"
+        },
+        "path": {
+          "type": "string"
+        },
+        "dataAttr": {
+          "type": "string"
+        },
+        "props": {
+          "type": "object"
+        },
+        "itemDataType": {
+          "type": "string",
+          "pattern": "[string|number|boolean|model]"
+        },
+        "itemPath": {
+          "type": "string"
+        },
+        "itemMap": {
+          "type": "object"          
+        }
       }
     }
   },
-  "then": {
-    "required": ["propType", "props"]
-  },
-  "else": {
-    "required": ["propType", "dataType", "path"]
-  }
+  "required": ["propType", "map"]
 }

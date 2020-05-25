@@ -1,0 +1,25 @@
+{
+  "description": "model dom-map schema",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "itemDataType": {
+      "type": "string",
+      "pattern": "model"
+    },
+    "itemPath": {
+      "type": "string"
+    },
+    "itemMap": {
+      "type": "object",
+      "properties": {
+        "props": {
+          "type": "object"
+        }
+      }
+    }
+  },
+  "required": ["itemPath", "itemMap"]
+}
