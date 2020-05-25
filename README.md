@@ -17,6 +17,7 @@ allows reconstructing the data model of a web page by mapping its DOM elements t
     * [Model Prop Map](#model-prop-map)
   * [Model Map](#model-map)
   * [ModelCollection Map](#modelcollection-map)
+  * [domToModel(modelMap[, url])](#domtomodelmodelmap-url)
  * [Build](#build)
  * [License](#license)
 
@@ -49,6 +50,8 @@ import domToModel from 'dom-to-model';
 ### Model Map
 
 ### ModelCollection Map
+
+### domToModel(modelMap[, url])
 
 ## Build
 
