@@ -11,7 +11,7 @@
     },
     "itemDataType": {
       "type": "string",
-      "pattern": "model"
+      "tconst": "model"
     },
     "itemPath": {
       "type": "string"
