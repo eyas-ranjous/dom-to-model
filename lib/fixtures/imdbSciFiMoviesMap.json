@@ -1,0 +1,30 @@
+{
+  "url": "https://www.imdb.com/search/title/?title_type=feature&genres=sci-fi&genres=News&explore=genres",
+  "modelType": "collection",
+  "itemPath": ".lister-list .lister-item-content",
+  "itemMap": {
+    "props": {
+      "title": {
+        "propType": "value",
+        "map": {
+          "dataType": "string",
+          "path": ".lister-item-header a"
+        }
+      },
+      "runtime": {
+        "propType": "value",
+        "map": {
+          "dataType": "string",
+          "path": ".text-muted .runtime"
+        }
+      },
+      "staff": {
+        "propType": "list",
+        "map": {
+          "itemPath": "p:last-of-type a",
+          "itemDataType": "string"
+        }
+      }
+    }
+  }
+}
