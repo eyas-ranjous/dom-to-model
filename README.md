@@ -11,12 +11,12 @@ allows reconstructing the data model of a web page by mapping its DOM elements t
 * [require](#require)
 * [import](#import)
 * [API](#api)
-  * [Prop Map](#construction)
-    * [Value Prop Map](#valuemap)
-    * [List Prop Map](#valuemap)
-    * [Model Prop Map](#valuemap)
-  * [Model Map](#start)
-  * [ModelCollection Map](#stop)
+  * [Prop Map](#prop-map)
+    * [Value Prop Map](#value-prop-map)
+    * [List Prop Map](#list-prop-map)
+    * [Model Prop Map](#model-prop-map)
+  * [Model Map](#model-map)
+  * [ModelCollection Map](#modelcollection-map)
  * [Build](#build)
  * [License](#license)
 
@@ -38,7 +38,7 @@ import domToModel from 'dom-to-model';
 
 ## API
 
-### PropMap
+### Prop Map
 
 #### Value Prop Map
 
@@ -46,6 +46,11 @@ import domToModel from 'dom-to-model';
 
 #### Model Prop Map
 
-### ModelMap
+### Model Map
 
-### ModelCollectionMap
+### ModelCollection Map
+
+## Build
+
+## License
+
