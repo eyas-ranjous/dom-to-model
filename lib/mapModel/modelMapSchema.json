@@ -2,6 +2,10 @@
   "description": "model dom-map schema",
   "type": "object",
   "properties": {
+    "modelType": {
+      "type": "string",
+      "tconst": "single"
+    },
     "url": {
       "type": "string"
     },

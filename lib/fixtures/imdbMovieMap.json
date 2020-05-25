@@ -1,8 +1,9 @@
 {
+  "modelType": "single",
   "props": {
     "id": {
       "propType": "value",
-      "selector": {
+      "map": {
         "dataType": "string",
         "path": ".title_block .title_bar_wrapper .ratings_wrapper .star-rating-widget",
         "dataAttr": "tconst"
@@ -10,84 +11,108 @@
     },
     "title": {
       "propType": "value",
-      "selector": {
+      "map": {
         "dataType": "string",
         "path": ".title_block .title_bar_wrapper .titleBar .title_wrapper h1"
       }
     },
     "originalTitle": {
       "propType": "value",
-      "selector": {
+      "map": {
         "dataType": "string",
         "path": ".title_wrapper .originalTitle"
       }
     },
     "year": {
       "propType": "value",
-      "selector": {
+      "map": {
         "dataType": "number",
         "path": ".title_block .title_bar_wrapper .titleBar .title_wrapper #titleYear a"
       }
     },
     "description": {
       "propType": "value",
-      "selector": {
+      "map": {
         "dataType": "string",
         "path": ".plot_summary_wrapper .summary_text"
       }
     },
     "duration": {
       "propType": "value",
-      "selector": {
+      "map": {
         "dataType": "string",
         "path": ".title_wrapper .subtext time"
       }
     },
     "releaseDate": {
       "propType": "value",
-      "selector": {
+      "map": {
         "dataType": "string",
         "path": ".title_wrapper .subtext a:nth-of-type(4)"
       }
     },
     "storyLine": {
       "propType": "value",
-      "selector": {
+      "map": {
         "dataType": "string",
         "path": "#titleStoryLine > div:first-of-type p span"
       }
     },
     "boxOffice": {
       "propType": "model",
-      "selector": {
-        "dataType": "object",
+      "map": {
         "props": {
           "budget": {
             "propType": "value",
-            "selector": {
+            "map": {
               "dataType": "string",
               "path": "#titleDetails .txt-block:nth-of-type(7)"
             }
           },
           "oppeningWeekendUsa": {
             "propType": "value",
-            "selector": {
+            "map": {
               "dataType": "string",
-              "path": "#titleDetails .txt-block:nth-of-type(8)"              
+              "path": "#titleDetails .txt-block:nth-of-type(8)"
             }
           },
           "grossUsa": {
             "propType": "value",
-            "selector": {
+            "map": {
               "dataType": "string",
-              "path": "#titleDetails .txt-block:nth-of-type(9)"              
+              "path": "#titleDetails .txt-block:nth-of-type(9)"
             }
           },
           "grossWorldwide": {
             "propType": "value",
-            "selector": {
+            "map": {
               "dataType": "string",
-              "path": "#titleDetails .txt-block:nth-of-type(10)"              
+              "path": "#titleDetails .txt-block:nth-of-type(10)"
+            }
+          }
+        }
+      }
+    },
+    "cast": {
+      "propType": "list",
+      "map": {
+        "itemDataType": "model",
+        "itemPath": "table.cast_list tr:not(:first-child)",
+        "itemMap": {
+          "props": {
+            "actor": {
+              "propType": "value",
+              "map": {
+                "dataType": "string",
+                "path": "td:nth-of-type(2) a"
+              }
+            },
+            "role": {
+              "propType": "value",
+              "map": {
+                "dataType": "string",
+                "path": "td:nth-of-type(4) a"
+              }
             }
           }
         }

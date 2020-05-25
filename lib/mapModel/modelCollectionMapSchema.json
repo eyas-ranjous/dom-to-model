@@ -5,6 +5,10 @@
     "url": {
       "type": "string"
     },
+    "modelType": {
+      "type": "string",
+      "tconst": "collection"
+    },
     "itemDataType": {
       "type": "string",
       "pattern": "model"

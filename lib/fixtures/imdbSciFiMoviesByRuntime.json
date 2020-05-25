@@ -1,0 +1,23 @@
+{
+  "modelType": "collection",
+  "itemPath": ".lister-list",
+  "itemMap": {
+    "props": {
+      "title": {
+        "propType": "value",
+        "dataType": "string",
+        "path": ".lister-item-header a"
+      },
+      "runtime": {
+        "propType": "value",
+        "dataType": "string",
+        "path": ".text-muted .runtime"
+      },
+      "director": {
+        "propType": "value",
+        "dataType": "string",
+        "path": "p:last-of-type"
+      }
+    }
+  }
+}
