@@ -28,7 +28,7 @@
     }
   },
   "then": {
-    "required": ["propType", "path", "props"]
+    "required": ["propType", "props"]
   },
   "else": {
     "required": ["propType", "dataType", "path"]
