@@ -49,8 +49,8 @@ Defines the model property map structure. It has 3 map types:
   "propType": "value",
   "map": {
     "dataType": "string|number|boolea",
-    "path": ".someClass .someSelector p:first-of-type",
-    "dataAttr": "dataAttrName"
+    "path": "#someId .someClass",
+    "dataAttr": "someName"
   }
 }
 ```
@@ -64,8 +64,8 @@ A list of values
   "propType": "list",
   "map": {
     "itemDataType": "string|number|boolean",
-    "itemPath": ".someClass .someSelector p:first-of-type",
-    "dataAttr": "dataAttrName"
+    "itemPath": "#someId .someClass",
+    "dataAttr": "someName"
   }
 }
 ```
@@ -82,7 +82,7 @@ A list of models
         "propType": "value",
         "map": {
           "dataType": "string",
-          "path": "#someSelector"
+          "path": "#someId .someClass"
         }
       }
     }
