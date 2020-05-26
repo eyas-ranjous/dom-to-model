@@ -90,7 +90,7 @@ To map prop to a data attribute
 #### Example
 
 ```html
-<span id="test" data-id="1234">test data</span>
+<span id="test" data-content="1234">test data</span>
 ```
 
 ```json
@@ -99,7 +99,7 @@ To map prop to a data attribute
   "map": {
     "dataType": "number",
     "path": "#test",
-    "dataAttr": "id"
+    "dataAttr": "content"
   }
 }
 ```
@@ -127,6 +127,36 @@ To map a prop to another model
 
 #### Example
 
+```html
+<div class="employee">
+  <span class="name">some name</span>
+  <span class="age">33</span>
+</div>
+```
+
+```json
+{
+  "propType": "model",
+  "map": {
+    "props": {
+      "name": {
+        "propType": "value",
+        "map": {
+          "dataType": "string",
+          "path": ".employee .name"
+        }
+      },
+      "age": {
+        "propType": "value",
+        "map": {
+          "dataType": "number",
+          "path": ".employee .age"
+        }
+      }
+    }
+  }
+}
+```
 
 ### List Prop Map
 
