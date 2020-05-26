@@ -61,7 +61,7 @@ Defines the model property map structure. It has 3 map types:
 <span id="test1234">test data</span>
 ```
 
-A value map to map a prop to the text content
+to map a prop to the text content
 
 ```json
 {
