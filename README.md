@@ -46,9 +46,9 @@ Defines the model property map schema. It has 3 map types:
 
 ### Value Prop Map
 
-#### map prop to the content of an element
+map prop to the content of an element
 
-**Schema**
+Schema
 ```json
 {
   "propType": "value",
@@ -75,9 +75,9 @@ Defines the model property map schema. It has 3 map types:
 }
 ```
 
-#### map prop to a data attribute
+map prop to a data attribute
 
-**Schema**
+Schema
 ```json
 {
   "propType": "value",
@@ -108,9 +108,9 @@ Defines the model property map schema. It has 3 map types:
 
 ### Model Prop Map
 
-#### map a prop to another model
+map a prop to another model
 
-**Schema**
+Schema
 ```json
 {
   "propType": "model",
@@ -162,9 +162,9 @@ Defines the model property map schema. It has 3 map types:
 
 ### List Prop Map
 
-#### map a prop to a list of values
+map a prop to a list of values
 
-**Map**
+Schema
 ```json
 {
   "propType": "list",
@@ -195,8 +195,9 @@ Defines the model property map schema. It has 3 map types:
 }
 ```
 
-#### map a prop to a list of models
+map a prop to a list of models
 
+Schema
 ```json
 {
   "propType": "list",
