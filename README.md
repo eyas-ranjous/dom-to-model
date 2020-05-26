@@ -105,6 +105,26 @@ A list of values
 }
 ```
 
+#### Example
+
+```html
+<ul id="test">
+  <li>val 1</li>
+  <li>val 2</li>
+  <li>val 3</li>
+</ul>
+```
+
+```json
+{
+  "propType": "list",
+  "map": {
+    "itemDataType": "string",
+    "itemPath": "ul#test li"
+  }
+}
+```
+
 A list of models
 
 ```json
@@ -112,12 +132,62 @@ A list of models
   "propType": "list",
   "map": {
     "itemDataType": "model",
-    "props": {
-      "prop1": {
-        "propType": "value",
-        "map": {
-          "dataType": "string",
-          "path": "#someId .someClass"
+    "itemPath": "#somePath",
+    "itemMap": {
+      "props": {
+        "propName": {
+          "propType": "value",
+          "map": {
+            "dataType": "string",
+            "path": "#someId .someClass"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+#### Example
+
+```html
+<ul class="employees">
+  <li>
+    <span class="name">employee 1</span>
+    <span class="age">33</span>
+  </li>
+  <li>
+    <span class="name">employee 2</span>
+    <span class="age">44</span>
+  </li>
+  <li>
+    <span class="name">employee 3</span>
+    <span class="age">55</span>
+  </li>
+</ul>
+```
+
+```json
+{
+  "propType": "list",
+  "map": {
+    "itemDataType": "model",
+    "itemPath": "ul.employees li",
+    "itemMap": {
+      "props": {
+        "name": {
+          "propType": "value",
+          "map": {
+            "dataType": "string",
+            "path": ".name"
+          }
+        },
+        "age": {
+          "propType": "value",
+          "map": {
+            "dataType": "number",
+            "path": ".age"
+          }
         }
       }
     }
