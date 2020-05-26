@@ -115,10 +115,10 @@ To map a prop to another model
   "map": {
     "props": {
       "prop1": {
-        // value, model or list map
+        /* value, model or list map */
       },
       "prop2": {
-        // value, model or list map
+        /* value, model or list map */
       }
     }
   }
