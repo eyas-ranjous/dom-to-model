@@ -337,7 +337,7 @@ defines the whole model map that composes model props maps.
 ```
 
 ## Model Collection Map
-defines a model collection map by using the same schema of a list prop combined with the model map schema.
+defines a model collection map by using the same schema of a list prop combined with the model map.
 
 ##### Schema
 ```json
