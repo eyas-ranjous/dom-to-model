@@ -10,16 +10,16 @@ allows reconstructing a data model from a web page by mapping its DOM elements t
 * [Install](#install)
 * [require](#require)
 * [import](#import)
-* [API](#api)
-  * [Prop Map](#prop-map)
-    * [Value Prop Map](#value-prop-map)
-    * [List Prop Map](#list-prop-map)
-    * [Model Prop Map](#model-prop-map)
-  * [Model Map](#model-map)
-  * [ModelCollection Map](#modelcollection-map)
-  * [domToModel(modelMap[, url])](#domtomodelmodelmap-url)
- * [Build](#build)
- * [License](#license)
+* [Intro](#intro)
+* [Prop Map](#prop-map)
+  * [Value Prop Map](#value-prop-map)
+  * [List Prop Map](#list-prop-map)
+  * [Model Prop Map](#model-prop-map)
+* [Model Map](#model-map)
+* [ModelCollection Map](#modelcollection-map)
+* [domToModel(modelMap[, url])](#domtomodelmodelmap-url)
+* [Build](#build)
+* [License](#license)
 
 ## Install
 ```sh
@@ -36,13 +36,13 @@ const domToModel = require('dom-to-model');
 import domToModel from 'dom-to-model';
 ```
 
-## API
+## Intro
 To use the library, you need to build your data model maps to an existing web page dom elements. Each model has properties and each property holds a value that might be a primitive value (number, string, boolean), a list of values, an object (another model) or a list of models.
 
-### Prop Map
+## Prop Map
 Defines the model property map structure. It has 3 map types:
 
-#### Value Prop Map
+### Value Prop Map
 
 ```json
 {
@@ -55,7 +55,7 @@ Defines the model property map structure. It has 3 map types:
 }
 ```
 
-#### List Prop Map
+### List Prop Map
 
 A list of values
 
@@ -90,16 +90,16 @@ A list of models
 }
 ```
 
-#### Model Prop Map
+### Model Prop Map
 ```json
 
 ```
 
-### Model Map
+## Model Map
 
-### ModelCollection Map
+## ModelCollection Map
 
-### domToModel(modelMap[, url])
+## domToModel(modelMap[, url])
 
 ## Build
 
