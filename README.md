@@ -21,7 +21,6 @@ allows reconstructing a data model from a web page by mapping its DOM elements t
  * [Build](#build)
  * [License](#license)
 
-
 ## Install
 ```sh
 npm install --save dom-to-model
@@ -38,14 +37,63 @@ import domToModel from 'dom-to-model';
 ```
 
 ## API
+To use the library, you need to build your data model maps to an existing web page dom elements. Each model has properties and each property holds a value that might be a primitive value (number, string, boolean), a list of values, an object (another model) or a list of models.
 
 ### Prop Map
+Defines the model property map structure. It has 3 map types:
 
 #### Value Prop Map
 
+```json
+{
+  "propType": "value",
+  "map": {
+    "dataType": "string|number|boolea",
+    "path": ".someClass .someSelector p:first-of-type",
+    "dataAttr": "dataAttrName"
+  }
+}
+```
+
 #### List Prop Map
 
+**A list of values**
+
+```json
+{
+  "propType": "list",
+  "map": {
+    "itemDataType": "string|number|boolean",
+    "itemPath": ".someClass .someSelector p:first-of-type",
+    "dataAttr": "dataAttrName"
+  }
+}
+```
+
+**A list of models**
+
+```json
+{
+  "propType": "list",
+  "map": {
+    "itemDataType": "model",
+    "props": {
+      "prop1": {
+        "propType": "value",
+        "map": {
+          "dataType": "string",
+          "path": "#someSelector"
+        }
+      }
+    }
+  }
+}
+```
+
 #### Model Prop Map
+```json
+
+```
 
 ### Model Map
 
