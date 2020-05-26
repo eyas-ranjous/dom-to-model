@@ -268,6 +268,73 @@ a model prop can be a collection of other models.
 ```
 
 ## Model Map
+defines the whole model map that composes model props maps.
+
+##### Schema
+```json
+{
+  "url": "http://optiona-url-for-web-page",
+  "modelType": "single",
+  "props": {
+    "propName1": {
+      "propType": "value",
+      "map": {
+        /* value prop map */
+      }
+    },
+    "propName2": {
+      "propType": "list",
+      "map": {
+        /* list prop map */
+      }
+    }    
+  }
+}
+```
+
+##### Example
+
+```html
+<ul class="employee">
+  <span class="name">employee name</span>
+  <span class="age">33</span>
+  <ul class="promotions">
+    <li>promotion 1</li>
+    <li>promotion 2</li>
+    <li>promotion 3</li>
+  </ul>
+</ul>
+```
+
+```json
+{
+  "url": "http://optional-url-for-web-page",
+  "modelType": "single",
+  "props": {
+    "name": {
+      "propType": "value",
+      "map": {
+        "dataType": "string",
+        "path": ".employee .name"
+      }
+    },
+    "age": {
+      "propType": "value",
+      "map": {
+        "dataType": "number",
+        "path": ".employee .age"
+      }
+    },
+    "promotions": {
+      "propType": "list",
+      "map": {
+        "itemDataType": "string",
+        "itemPath": ".employee ul.promotions li"
+      }
+    }  
+  }
+}
+```
 
 ## Model Collection Map
 
