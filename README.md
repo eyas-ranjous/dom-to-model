@@ -13,10 +13,12 @@ allows reconstructing a data model from a web page by mapping its DOM elements t
 * [Intro](#intro)
 * [Prop Map](#prop-map)
   * [Value Prop Map](#value-prop-map)
-  * [Model Prop Map](#model-prop-map)
   * [List Prop Map](#list-prop-map)
 * [Model Map](#model-map)
 * [ModelCollection Map](#modelcollection-map)
+* [Model Prop](#model-prop)
+  * [Model Prop Map](#model-prop-map)
+  * [ModelCollection Prop Map](#modelcollection-prop-map)
 * [domToModel(modelMap[, url])](#domtomodelmodelmap-url)
 * [Build](#build)
 * [License](#license)
@@ -261,11 +263,6 @@ To map a prop to a list of models
     }
   }
 }
-```
-
-### Model Prop Map
-```json
-
 ```
 
 ## Model Map
