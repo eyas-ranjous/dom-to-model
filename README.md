@@ -413,5 +413,9 @@ defines a model collection map by using the same schema of a list prop combined 
 
 ## Build
 
-## License
+```sh
+grunt build
+```
 
+## License
+The ISC License. Full License is [here](https://github.com/node-work/dom-to-model/blob/master/LICENSE)
