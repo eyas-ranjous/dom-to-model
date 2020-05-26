@@ -4,7 +4,7 @@
 
 allows reconstructing a data model from a web page by mapping its DOM elements to user-defined model maps. It supports mapping a single model or collection, as well as recursive mapping for props that represent other models or collections.
 
-<img width="996" alt="diagram" src="https://user-images.githubusercontent.com/6517308/82834887-041d6e80-9e88-11ea-9c05-6f9564a40b65.png">
+<img width="1205" alt="d" src="https://user-images.githubusercontent.com/6517308/82850211-1071ed80-9ec1-11ea-9ec6-a0803af5e856.png">
 
 # Table of Contents
 * [Install](#install)
