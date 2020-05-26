@@ -13,8 +13,8 @@ allows reconstructing a data model from a web page by mapping its DOM elements t
 * [Intro](#intro)
 * [Prop Map](#prop-map)
   * [Value Prop Map](#value-prop-map)
-  * [List Prop Map](#list-prop-map)
   * [Model Prop Map](#model-prop-map)
+  * [List Prop Map](#list-prop-map)
 * [Model Map](#model-map)
 * [ModelCollection Map](#modelcollection-map)
 * [domToModel(modelMap[, url])](#domtomodelmodelmap-url)
@@ -52,7 +52,7 @@ To map prop to the content of an element
   "propType": "value",
   "map": {
     "dataType": "string|number|boolean",
-    "path": "#someId .someClass"
+    "path": "#some-id .some-class"
   }
 }
 ```
@@ -81,7 +81,8 @@ To map prop to a data attribute
   "propType": "value",
   "map": {
     "dataType": "string|number|boolean",
-    "path": "#someId .someClass"
+    "path": "#some-id .some-class",
+    "dataAttr": "some-name"
   }
 }
 ```
@@ -103,17 +104,41 @@ To map prop to a data attribute
 }
 ```
 
+### Model Prop Map
+
+To map a prop to another model
+
+**Map**
+```json
+{
+  "propType": "model",
+  "map": {
+    "props": {
+      "prop1": {
+        // value, model or list map
+      },
+      "prop2": {
+        // value, model or list map
+      }
+    }
+  }
+}
+```
+
+#### Example
+
+
 ### List Prop Map
 
-A list of values
+To map a prop to a list of values
 
+**Map**
 ```json
 {
   "propType": "list",
   "map": {
     "itemDataType": "string|number|boolean",
-    "itemPath": "#someId .someClass",
-    "dataAttr": "someName"
+    "itemPath": "#someId .someClass"
   }
 }
 ```
@@ -138,7 +163,7 @@ A list of values
 }
 ```
 
-A list of models
+To map a prop to a list of models
 
 ```json
 {
