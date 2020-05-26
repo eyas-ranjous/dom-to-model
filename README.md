@@ -14,11 +14,10 @@ allows reconstructing a data model from a web page by mapping its DOM elements t
 * [Prop Map](#prop-map)
   * [Value Prop Map](#value-prop-map)
   * [List Prop Map](#list-prop-map)
+  * [Nested Model Prop Map](#nested-model-prop-map)
+  * [Nested ModelCollection Prop Map](#nested-model-collection-prop-map)
 * [Model Map](#model-map)
 * [ModelCollection Map](#modelcollection-map)
-* [Nested Model Prop](#model-prop)
-  * [Model Prop Map](#model-prop-map)
-  * [ModelCollection Prop Map](#modelcollection-prop-map)
 * [domToModel(modelMap[, url])](#domtomodelmodelmap-url)
 * [Build](#build)
 * [License](#license)
@@ -141,13 +140,7 @@ map a prop to a list of values
 }
 ```
 
-## Model Map
-
-## ModelCollection Map
-
-## Nested Model Prop
-
-### Model Prop Map
+### Nested Model Prop Map
 
 a model prop can be another model
 
@@ -201,7 +194,7 @@ a model prop can be another model
 }
 ```
 
-### ModelCollection Prop Map
+### Nested Model Collection Prop Map
 
 a model prop can be a collection of other models.
 
@@ -273,6 +266,10 @@ a model prop can be a collection of other models.
   }
 }
 ```
+
+## Model Map
+
+## ModelCollection Map
 
 ## domToModel(modelMap[, url])
 
