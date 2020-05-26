@@ -16,7 +16,7 @@ allows reconstructing a data model from a web page by mapping its DOM elements t
   * [List Prop Map](#list-prop-map)
 * [Model Map](#model-map)
 * [ModelCollection Map](#modelcollection-map)
-* [Model Prop](#model-prop)
+* [Nested Model Prop](#model-prop)
   * [Model Prop Map](#model-prop-map)
   * [ModelCollection Prop Map](#modelcollection-prop-map)
 * [domToModel(modelMap[, url])](#domtomodelmodelmap-url)
@@ -106,9 +106,50 @@ map prop to a data attribute
 }
 ```
 
+### List Prop Map
+
+map a prop to a list of values
+
+##### Schema
+```json
+{
+  "propType": "list",
+  "map": {
+    "itemDataType": "string|number|boolean",
+    "itemPath": "#someId .someClass"
+  }
+}
+```
+
+##### Example
+
+```html
+<ul id="test">
+  <li>val 1</li>
+  <li>val 2</li>
+  <li>val 3</li>
+</ul>
+```
+
+```json
+{
+  "propType": "list",
+  "map": {
+    "itemDataType": "string",
+    "itemPath": "ul#test li"
+  }
+}
+```
+
+## Model Map
+
+## ModelCollection Map
+
+## Nested Model Prop
+
 ### Model Prop Map
 
-map a prop to another model
+a model prop can be another model
 
 ##### Schema
 ```json
@@ -160,44 +201,11 @@ map a prop to another model
 }
 ```
 
-### List Prop Map
+### ModelCollection Prop Map
 
-map a prop to a list of values
+a model prop can be a collection of other models.
 
 ##### Schema
-```json
-{
-  "propType": "list",
-  "map": {
-    "itemDataType": "string|number|boolean",
-    "itemPath": "#someId .someClass"
-  }
-}
-```
-
-##### Example
-
-```html
-<ul id="test">
-  <li>val 1</li>
-  <li>val 2</li>
-  <li>val 3</li>
-</ul>
-```
-
-```json
-{
-  "propType": "list",
-  "map": {
-    "itemDataType": "string",
-    "itemPath": "ul#test li"
-  }
-}
-```
-
-map a prop to a list of models
-
-Schema
 ```json
 {
   "propType": "list",
@@ -265,10 +273,6 @@ Schema
   }
 }
 ```
-
-## Model Map
-
-## ModelCollection Map
 
 ## domToModel(modelMap[, url])
 
