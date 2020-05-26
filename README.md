@@ -42,13 +42,13 @@ import domToModel from 'dom-to-model';
 To use the library, you need to build your data model maps around an existing web page DOM. Each model has properties and each property holds a value that might be a primitive value (number, string, boolean), a list of values, an object (another model) or a list of models.
 
 ## Prop Map
-Defines the model property map structure. It has 3 map types:
+Defines the model property map schema. It has 3 map types:
 
 ### Value Prop Map
 
-To map prop to the content of an element
+#### map prop to the content of an element
 
-**Map**
+**Schema**
 ```json
 {
   "propType": "value",
@@ -59,7 +59,7 @@ To map prop to the content of an element
 }
 ```
 
-#### Example
+##### Example
 
 ```html
 <span id="test1234">test data</span>
@@ -75,9 +75,9 @@ To map prop to the content of an element
 }
 ```
 
-To map prop to a data attribute
+#### map prop to a data attribute
 
-**Map**
+**Schema**
 ```json
 {
   "propType": "value",
@@ -89,7 +89,7 @@ To map prop to a data attribute
 }
 ```
 
-#### Example
+##### Example
 
 ```html
 <span id="test" data-content="1234">test data</span>
@@ -108,9 +108,9 @@ To map prop to a data attribute
 
 ### Model Prop Map
 
-To map a prop to another model
+#### map a prop to another model
 
-**Map**
+**Schema**
 ```json
 {
   "propType": "model",
@@ -127,7 +127,7 @@ To map a prop to another model
 }
 ```
 
-#### Example
+##### Example
 
 ```html
 <div class="employee">
@@ -162,7 +162,7 @@ To map a prop to another model
 
 ### List Prop Map
 
-To map a prop to a list of values
+#### map a prop to a list of values
 
 **Map**
 ```json
@@ -175,7 +175,7 @@ To map a prop to a list of values
 }
 ```
 
-#### Example
+##### Example
 
 ```html
 <ul id="test">
@@ -195,7 +195,7 @@ To map a prop to a list of values
 }
 ```
 
-To map a prop to a list of models
+#### map a prop to a list of models
 
 ```json
 {
@@ -218,7 +218,7 @@ To map a prop to a list of models
 }
 ```
 
-#### Example
+##### Example
 
 ```html
 <ul class="employees">
