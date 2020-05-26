@@ -37,7 +37,7 @@ import domToModel from 'dom-to-model';
 ```
 
 ## Intro
-To use the library, you need to build your data model maps around an existing web page DOM. Each model has properties and each property holds a value that might be a primitive value (number, string, boolean), a list of values, an object (another model) or a list of models.
+To use the library, you need to build your data model maps around an existing web page DOM. Each model has properties and each property holds a value which might be a primitive value (number, string, boolean), a list of values, an object (another model) or a list of models.
 
 ## Prop Map
 Defines the model property map structure. It has 3 map types:
@@ -48,9 +48,44 @@ Defines the model property map structure. It has 3 map types:
 {
   "propType": "value",
   "map": {
-    "dataType": "string|number|boolea",
+    "dataType": "string|number|boolean",
     "path": "#someId .someClass",
     "dataAttr": "someName"
+  }
+}
+```
+
+#### Example
+
+```html
+<span id="test1234">test data</span>
+```
+
+A value map to map a prop to the text content
+
+```json
+{
+  "propType": "value",
+  "map": {
+    "dataType": "string",
+    "path": "#test1234"
+  }
+}
+```
+
+and to map a prop to a data attribute
+
+```html
+<span id="test" data-id="1234">test data</span>
+```
+
+```json
+{
+  "propType": "value",
+  "map": {
+    "dataType": "number",
+    "path": "#test",
+    "dataAttr": "id"
   }
 }
 ```
