@@ -57,7 +57,7 @@ Defines the model property map structure. It has 3 map types:
 
 #### List Prop Map
 
-**A list of values**
+A list of values
 
 ```json
 {
@@ -70,7 +70,7 @@ Defines the model property map structure. It has 3 map types:
 }
 ```
 
-**A list of models**
+A list of models
 
 ```json
 {
