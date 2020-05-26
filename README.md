@@ -15,9 +15,9 @@ allows reconstructing a data model from a web page by mapping its DOM elements t
   * [Value Prop Map](#value-prop-map)
   * [List Prop Map](#list-prop-map)
   * [Nested Model Prop Map](#nested-model-prop-map)
-  * [Nested ModelCollection Prop Map](#nested-model-collection-prop-map)
+  * [Nested Model Collection Prop Map](#nested-model-collection-prop-map)
 * [Model Map](#model-map)
-* [ModelCollection Map](#modelcollection-map)
+* [Model Collection Map](#modelcollection-map)
 * [domToModel(modelMap[, url])](#domtomodelmodelmap-url)
 * [Build](#build)
 * [License](#license)
@@ -269,7 +269,7 @@ a model prop can be a collection of other models.
 
 ## Model Map
 
-## ModelCollection Map
+## Model Collection Map
 
 ## domToModel(modelMap[, url])
 
