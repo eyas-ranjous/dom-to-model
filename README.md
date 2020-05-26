@@ -17,7 +17,7 @@ allows reconstructing a data model from a web page by mapping its DOM elements t
   * [Nested Model Prop Map](#nested-model-prop-map)
   * [Nested Model Collection Prop Map](#nested-model-collection-prop-map)
 * [Model Map](#model-map)
-* [Model Collection Map](#modelcollection-map)
+* [Model Collection Map](#model-collection-map)
 * [domToModel(modelMap[, url])](#domtomodelmodelmap-url)
 * [Build](#build)
 * [License](#license)
