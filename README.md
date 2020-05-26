@@ -37,7 +37,7 @@ import domToModel from 'dom-to-model';
 ```
 
 ## Intro
-To use the library, you need to build your data model maps to an existing web page dom elements. Each model has properties and each property holds a value that might be a primitive value (number, string, boolean), a list of values, an object (another model) or a list of models.
+To use the library, you need to build your data model maps around an existing web page DOM. Each model has properties and each property holds a value that might be a primitive value (number, string, boolean), a list of values, an object (another model) or a list of models.
 
 ## Prop Map
 Defines the model property map structure. It has 3 map types:
