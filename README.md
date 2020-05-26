@@ -44,13 +44,15 @@ Defines the model property map structure. It has 3 map types:
 
 ### Value Prop Map
 
+To map prop to the content of an element
+
+*Map*
 ```json
 {
   "propType": "value",
   "map": {
     "dataType": "string|number|boolean",
-    "path": "#someId .someClass",
-    "dataAttr": "someName"
+    "path": "#someId .someClass"
   }
 }
 ```
@@ -60,8 +62,6 @@ Defines the model property map structure. It has 3 map types:
 ```html
 <span id="test1234">test data</span>
 ```
-
-to map a prop to the text content
 
 ```json
 {
@@ -73,7 +73,20 @@ to map a prop to the text content
 }
 ```
 
-and to map a prop to a data attribute
+To map prop to a data attribute
+
+*Map*
+```json
+{
+  "propType": "value",
+  "map": {
+    "dataType": "string|number|boolean",
+    "path": "#someId .someClass"
+  }
+}
+```
+
+#### Example
 
 ```html
 <span id="test" data-id="1234">test data</span>
