@@ -1,7 +1,7 @@
 {
-  "url": "https://www.imdb.com/search/title/?title_type=feature&genres=sci-fi&genres=News&explore=genres",
+  "url": "https://www.imdb.com/search/title/?year=2000",
   "modelType": "collection",
-  "itemPath": ".lister-list .lister-item-content",
+  "itemPath": ".lister-item .lister-item-content",
   "itemMap": {
     "props": {
       "title": {
@@ -15,14 +15,14 @@
         "propType": "value",
         "map": {
           "dataType": "string",
-          "path": ".text-muted .runtime"
+          "path": "p.text-muted .runtime"
         }
       },
-      "staff": {
-        "propType": "list",
+      "description": {
+        "propType": "value",
         "map": {
-          "itemPath": "p:last-of-type a",
-          "itemDataType": "string"
+          "dataType": "string",
+          "path": "p.text-muted:nth-of-type(2)"
         }
       }
     }
