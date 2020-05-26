@@ -287,7 +287,7 @@ defines the whole model map that composes model props maps.
       "map": {
         /* list prop map */
       }
-    }    
+    }
   }
 }
 ```
@@ -337,6 +337,77 @@ defines the whole model map that composes model props maps.
 ```
 
 ## Model Collection Map
+defines a model collection map by using the same schema of a list prop combined with the model map schema.
+
+##### Schema
+```json
+{
+  "url": "http://optiona-url-for-web-page",
+  "modelType": "collection",
+  "itemPath": "#path-to-collection-model-item",
+  "itemMap": {
+    "props": {
+      "propName1": {
+        "propType": "value",
+        "map": {
+          /* value prop map */
+        }
+      },
+      "propName2": {
+        "propType": "list",
+        "map": {
+          /* list prop map */
+        }
+      }
+    }
+  }
+}
+```
+
+##### Example
+
+```html
+<ul class="employees">
+  <li class="employee">
+    <span class="name">employee 1</span>
+    <span class="age">33</span>
+  </li>
+  <li class="employee">
+    <span class="name">employee 2</span>
+    <span class="age">44</span>
+  </li>
+  <li class="employee">
+    <span class="name">employee 3</span>
+    <span class="age">55</span>
+  </li>
+</ul>
+```
+
+```json
+{
+  "url": "http://optional-url-for-web-page",
+  "modelType": "collection",
+  "itemPath": "ul.employees li.employee",
+  "itemMap": {
+    "props": {
+      "name": {
+        "propType": "value",
+        "map": {
+          "dataType": "string",
+          "path": ".name"
+        }
+      },
+      "age": {
+        "propType": "value",
+        "map": {
+          "dataType": "number",
+          "path": ".age"
+        }
+      }
+    }
+  }
+}
+```
 
 ## domToModel(modelMap[, url])
 
