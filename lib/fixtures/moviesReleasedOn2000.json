@@ -1,0 +1,30 @@
+{
+  "url": "https://www.imdb.com/search/title/?year=2000",
+  "modelType": "collection",
+  "itemPath": ".lister-item .lister-item-content",
+  "itemMap": {
+    "props": {
+      "title": {
+        "propType": "value",
+        "map": {
+          "dataType": "string",
+          "path": ".lister-item-header a"
+        }
+      },
+      "runtime": {
+        "propType": "value",
+        "map": {
+          "dataType": "string",
+          "path": "p.text-muted .runtime"
+        }
+      },
+      "description": {
+        "propType": "value",
+        "map": {
+          "dataType": "string",
+          "path": "p.text-muted:nth-of-type(2)"
+        }
+      }
+    }
+  }
+}

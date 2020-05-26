@@ -1,0 +1,29 @@
+{
+  "description": "model dom-map schema",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "modelType": {
+      "type": "string",
+      "tconst": "collection"
+    },
+    "itemDataType": {
+      "type": "string",
+      "tconst": "model"
+    },
+    "itemPath": {
+      "type": "string"
+    },
+    "itemMap": {
+      "type": "object",
+      "properties": {
+        "props": {
+          "type": "object"
+        }
+      }
+    }
+  },
+  "required": ["itemPath", "itemMap"]
+}
