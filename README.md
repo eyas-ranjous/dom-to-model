@@ -46,7 +46,7 @@ Defines the model property map structure. It has 3 map types:
 
 To map prop to the content of an element
 
-*Map*
+**Map**
 ```json
 {
   "propType": "value",
@@ -75,7 +75,7 @@ To map prop to the content of an element
 
 To map prop to a data attribute
 
-*Map*
+**Map**
 ```json
 {
   "propType": "value",
