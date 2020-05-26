@@ -48,7 +48,7 @@ Defines the model property map schema. It has 3 map types:
 
 map prop to the content of an element
 
-Schema
+##### Schema
 ```json
 {
   "propType": "value",
@@ -77,7 +77,7 @@ Schema
 
 map prop to a data attribute
 
-Schema
+##### Schema
 ```json
 {
   "propType": "value",
@@ -110,7 +110,7 @@ Schema
 
 map a prop to another model
 
-Schema
+##### Schema
 ```json
 {
   "propType": "model",
@@ -164,7 +164,7 @@ Schema
 
 map a prop to a list of values
 
-Schema
+##### Schema
 ```json
 {
   "propType": "list",
