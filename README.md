@@ -418,7 +418,7 @@ After building your model maps, you can use the library main function to load do
 ```js
 const movieMap = require('./lib/fixtures/imdbMovieMap');
 
-domToModel(movieMap).then((movie) => // https://github.com/node-work/dom-to-model/blob/development/lib/fixtures/movie.json)
+domToModel(movieMap).then((movie) => // https://github.com/node-work/dom-to-model/blob/development/lib/fixtures/movie.js
 ```
 
 ### Movie Collection
@@ -427,7 +427,7 @@ domToModel(movieMap).then((movie) => // https://github.com/node-work/dom-to-mode
 ```js
 const movieCollectionMap = require('./lib/fixtures/moviesReleasedOn2000');
 
-domToModel(movieCollectionMap).then((movies) => // https://github.com/node-work/dom-to-model/blob/development/lib/fixtures/movieCollection.json)
+domToModel(movieCollectionMap).then((movies) => // https://github.com/node-work/dom-to-model/blob/development/lib/fixtures/movieCollection.js
 ```
 
 ## Build
