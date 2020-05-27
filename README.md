@@ -268,7 +268,7 @@ a model prop can be a collection of other models.
 ```
 
 ## Model Map
-defines the whole model map that composes model props maps.
+defines the whole model map that composes model prop maps.
 
 ##### Schema
 ```json
