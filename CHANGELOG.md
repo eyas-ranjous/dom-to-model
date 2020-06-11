@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2020-06-11
+### Fixed
+- travis build.
+- tests.
+
 ## [1.0.0] - 2020-05-27
 ### Added
 - new release.
