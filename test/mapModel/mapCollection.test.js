@@ -1,25 +1,25 @@
 const { assert } = require('chai');
 const { JSDOM } = require('jsdom');
 const jquery = require('jquery');
-const mapModelCollection = require('../mapModelCollection');
+const { mapCollection } = require('../../lib/mapModel');
 
-describe('mapModelCollection($, modelMap)', () => {
+describe('mapCollection($, modelMap)', () => {
   it('throw an error if prop data map is not a valid scheme', () => {
     const $ = jquery(new JSDOM('<div></div>').window);
     assert.throw(
-      () => mapModelCollection($, ''),
+      () => mapCollection($, ''),
       Error,
       'should be object'
     );
 
     assert.throw(
-      () => mapModelCollection($, {}),
+      () => mapCollection($, {}),
       Error,
       'should have required property \'itemPath\''
     );
 
     assert.throw(
-      () => mapModelCollection($, { itemPath: 'test' }),
+      () => mapCollection($, { itemPath: 'test' }),
       Error,
       'should have required property \'itemMap\''
     );
@@ -58,7 +58,7 @@ describe('mapModelCollection($, modelMap)', () => {
       }
     };
 
-    assert.deepEqual(mapModelCollection($, moviesMap), [
+    assert.deepEqual(mapCollection($, moviesMap), [
       { name: 'name 1', salary: '5000' },
       { name: 'name 2', salary: '6000' },
       { name: 'name 3', salary: '7000' }

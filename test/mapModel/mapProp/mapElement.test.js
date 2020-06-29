@@ -1,7 +1,7 @@
 const { assert } = require('chai');
 const { JSDOM } = require('jsdom');
 const jquery = require('jquery');
-const mapElement = require('../mapElement');
+const mapElement = require('../../../lib/mapModel/mapProp/mapElement');
 
 describe('mapProp/mapElement(element, dataType, dataAttr)', () => {
   it('return null when element does not exist', () => {
