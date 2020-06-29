@@ -1,7 +1,7 @@
 const { assert } = require('chai');
 const { JSDOM } = require('jsdom');
 const jquery = require('jquery');
-const mapModel = require('../mapModel');
+const { mapModel } = require('../../lib/mapModel');
 
 describe('mapModel($, modelMap[, element])', () => {
   it('throw an error if prop data map is not a valid scheme', () => {

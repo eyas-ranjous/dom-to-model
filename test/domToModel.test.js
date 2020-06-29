@@ -1,8 +1,8 @@
 const { assert } = require('chai');
+const domToModel = require('../lib/domToModel');
 const imdbMovieMap = require('./fixtures/imdbMovieMap');
 const imdbMovies2000Map = require('./fixtures/moviesReleasedOn2000');
 const movieData = require('./fixtures/movie');
-const domToModel = require('./domToModel');
 
 describe('domToModel(modelMap[, url])', () => {
   it('map dom to a model object', () => (

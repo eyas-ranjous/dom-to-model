@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-const fetchDom = require('./index');
+const fetchDom = require('../lib/fetchDom');
 
 describe('.fetchDom(url)', () => {
   it('fetchs the dom content of a page and resolve with jQuery', () => (
