@@ -8,9 +8,9 @@ module.exports = (grunt) => {
     },
     mocha_istanbul: {
       coverage: {
-        src: 'lib',
+        src: 'test',
         options: {
-          mask: 'test/**/*.test.js'
+          mask: '**/*.test.js'
         }
       }
     }
