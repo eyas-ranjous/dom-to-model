@@ -422,7 +422,7 @@ install `node-fetch` & `dom-to-model` and run the following in your cmd and copy
 
 ```js
 const fetch = require('node-fetch');
-const domToModel = require('./index');
+const domToModel = require('dom-to-model');
 
 (async () => {
   const response = await fetch(
