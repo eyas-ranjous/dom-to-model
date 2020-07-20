@@ -2,7 +2,7 @@
 
 [![build:?](https://travis-ci.org/node-work/dom-to-model.svg?branch=master)](https://travis-ci.org/node-work/dom-to-model) [![npm](https://img.shields.io/badge/node-%3E=%2010.0-blue.svg)](https://www.npmjs.com/package/dom-to-model) [![npm](https://img.shields.io/npm/v/dom-to-model.svg)](https://www.npmjs.com/package/dom-to-model) [![npm](https://img.shields.io/npm/dm/dom-to-model.svg)](https://www.npmjs.com/package/dom-to-model)
 
-allows reconstructing a data model from a web page by mapping its DOM elements to user-defined models. It supports mapping a single model or collection, as well as recursive mapping for props that represent other models or collections.
+It acts like an API adapter for an existing website and allows reconstructing a data model from its page content by mapping DOM elements to user-defined models. It supports mapping a single model or collection, as well as recursive mapping for props that represent other models or collections.
 
 <img width="860" alt="d" src="https://user-images.githubusercontent.com/6517308/82919798-1a850200-9f3c-11ea-874a-50ef723b23b2.png">
 
@@ -410,24 +410,64 @@ defines a model collection map by using the same schema of a list prop combined 
 ```
 
 ## domToModel(modelMap[, url])
-After building your model maps, you can use the library main function to load dom into models. Here're to examples of mapping a **Movie** & **Movie Collection** from imdb.com.
+After building your model maps, you can use the library main function to load dom into models.
 
-### Movie
-<a href="https://github.com/node-work/dom-to-model/blob/development/lib/fixtures/imdbMovieMap.json">imdb.com Movie model map</a>
+### Example
 
-```js
-const movieMap = require('./lib/fixtures/imdbMovieMap');
+Translating imdb movie page into a Movie json model.
 
-domToModel(movieMap).then((movie) => // https://github.com/node-work/dom-to-model/blob/development/lib/fixtures/movie.js
-```
+I created a dom map to the movie <a href="https://github.com/node-work/dom-to-model/blob/master/test/fixtures/imdbMovieMap.json">here</a>
 
-### Movie Collection
-<a href="https://github.com/node-work/dom-to-model/blob/development/lib/fixtures/moviesReleasedOn2000.json">imdb.com Movies released on 2000 map</a>
+install `node-fetch` & `dom-to-model` and copy-paste the below code in your cmd, and give it some time to retrieve content!
 
 ```js
-const movieCollectionMap = require('./lib/fixtures/moviesReleasedOn2000');
+const fetch = require('node-fetch');
+const domToModel = require('dom-to-model');
 
-domToModel(movieCollectionMap).then((movies) => // https://github.com/node-work/dom-to-model/blob/development/lib/fixtures/movieCollection.js
+(async () => {
+  const response = await fetch(
+    'https://raw.githubusercontent.com/node-work/dom-to-model/master/test/fixtures/imdbMovieMap.json'
+  );
+
+  const starWarsMovieMap = JSON.parse(await response.text());
+    
+  console.log(await domToModel(starWarsMovieMap)) 
+})();
+
+/*
+{
+  id: 'tt0076759',
+  title: 'Star Wars: Episode IV - A New Hope',
+  originalTitle: 'Star Wars',
+  year: 1977,
+  description: "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
+  duration: '2h 1min',
+  releaseDate: '25 May 1977 (USA)',
+  storyLine: 'The Imperial Forces, under orders from cruel Darth Vader, hold Princess Leia hostage in their efforts to quell the rebellion against the Galactic Empire. Luke Skywalker and Han Solo, captain of the Millennium Falcon, work together with the companionable droid duo R2-D2 and C-3PO to rescue the beautiful princess, help the Rebel Alliance and restore freedom and justice to the Galaxy.',
+  boxOffice: {
+    budget: '$11,000,000',
+    oppeningWeekendUsa: '$1,554,475,',
+    grossUsa: '$460,998,507'
+  },
+  cast: [
+    { actor: 'Mark Hamill', role: 'Luke Skywalker' },
+    { actor: 'Harrison Ford', role: 'Han Solo' },
+    { actor: 'Carrie Fisher', role: 'Princess Leia Organa' },
+    { actor: 'Peter Cushing', role: 'Grand Moff Tarkin' },
+    { actor: 'Alec Guinness', role: 'Ben Obi-Wan Kenobi' },
+    { actor: 'Anthony Daniels', role: 'C-3PO' },
+    { actor: 'Kenny Baker', role: 'R2-D2' },
+    { actor: 'Peter Mayhew', role: 'Chewbacca' },
+    { actor: 'David Prowse', role: 'Darth Vader' },
+    { actor: 'Phil Brown', role: 'Uncle Owen' },
+    { actor: 'Shelagh Fraser', role: 'Aunt Beru' },
+    { actor: 'Jack Purvis', role: 'Chief Jawa' },
+    { actor: 'Alex McCrindle', role: 'General Dodonna' },
+    { actor: 'Eddie Byrne', role: 'General Willard' },
+    { actor: 'Drewe Henley', role: 'Red Leader' }
+  ]
+}
+*/
 ```
 
 ## Build
