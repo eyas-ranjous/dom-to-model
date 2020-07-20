@@ -447,8 +447,7 @@ const domToModel = require('dom-to-model');
   boxOffice: {
     budget: '$11,000,000',
     oppeningWeekendUsa: '$1,554,475,',
-    grossUsa: '$460,998,507',
-    grossWorldwide: '$775,521,394'
+    grossUsa: '$460,998,507'
   },
   cast: [
     { actor: 'Mark Hamill', role: 'Luke Skywalker' },
