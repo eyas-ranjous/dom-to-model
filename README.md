@@ -414,14 +414,14 @@ After building your model maps, you can use the library main function to load do
 
 ### Example
 
-Translating imdb movie page into a Movie json object.
+Translating imdb movie page into a Movie json model.
 
 I created a dom map to the movie <a href="https://github.com/node-work/dom-to-model/blob/master/test/fixtures/imdbMovieMap.json">here</a>
 
 ```js
 const starWarsMovieMap = require('./test/fixtures/imdbMovieMap');
 
-const starWarsMovie = await domToModel(starWarsMovieMap);
+(async () => console.log(await domToModel(starWarsMovieMap)))();
 
 // https://github.com/node-work/dom-to-model/blob/master/test/fixtures/movie.js
 ```
