@@ -10,7 +10,6 @@ module.exports = {
   boxOffice: {
     budget: '$11,000,000',
     grossUsa: '$460,998,507',
-    grossWorldwide: '$775,512,064',
     oppeningWeekendUsa: '$1,554,475,'
   },
   cast: [

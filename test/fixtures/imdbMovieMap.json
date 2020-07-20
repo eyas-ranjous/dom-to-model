@@ -83,13 +83,6 @@
               "dataType": "string",
               "path": "#titleDetails .txt-block:nth-of-type(9)"
             }
-          },
-          "grossWorldwide": {
-            "propType": "value",
-            "map": {
-              "dataType": "string",
-              "path": "#titleDetails .txt-block:nth-of-type(10)"
-            }
           }
         }
       }
