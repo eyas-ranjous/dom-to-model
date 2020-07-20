@@ -410,7 +410,7 @@ defines a model collection map by using the same schema of a list prop combined 
 ```
 
 ## domToModel(modelMap[, url])
-After building your model maps, you can use the library main function to load dom into models. Here're to examples of mapping a **Movie** & **Movie Collection** from imdb.com.
+After building your model maps, you can use the library main function to load dom into models.
 
 ### Example
 
