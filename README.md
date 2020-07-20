@@ -2,7 +2,7 @@
 
 [![build:?](https://travis-ci.org/node-work/dom-to-model.svg?branch=master)](https://travis-ci.org/node-work/dom-to-model) [![npm](https://img.shields.io/badge/node-%3E=%2010.0-blue.svg)](https://www.npmjs.com/package/dom-to-model) [![npm](https://img.shields.io/npm/v/dom-to-model.svg)](https://www.npmjs.com/package/dom-to-model) [![npm](https://img.shields.io/npm/dm/dom-to-model.svg)](https://www.npmjs.com/package/dom-to-model)
 
-allows reconstructing a data model from a web page by mapping its DOM elements to user-defined models. It supports mapping a single model or collection, as well as recursive mapping for props that represent other models or collections.
+It acts like an API adapter for an existing website and allows reconstructing a data model from its page content by mapping DOM elements to user-defined models. It supports mapping a single model or collection, as well as recursive mapping for props that represent other models or collections.
 
 <img width="860" alt="d" src="https://user-images.githubusercontent.com/6517308/82919798-1a850200-9f3c-11ea-874a-50ef723b23b2.png">
 
@@ -412,22 +412,18 @@ defines a model collection map by using the same schema of a list prop combined 
 ## domToModel(modelMap[, url])
 After building your model maps, you can use the library main function to load dom into models. Here're to examples of mapping a **Movie** & **Movie Collection** from imdb.com.
 
-### Movie
-<a href="https://github.com/node-work/dom-to-model/blob/development/lib/fixtures/imdbMovieMap.json">imdb.com Movie model map</a>
+### Example
+
+Translating imdb movie page into a Movie json object.
+
+I created a dom map to the movie <a href="https://github.com/node-work/dom-to-model/blob/master/test/fixtures/imdbMovieMap.json">here</a>
 
 ```js
-const movieMap = require('./lib/fixtures/imdbMovieMap');
+const starWarsMovieMap = require('./test/fixtures/imdbMovieMap');
 
-domToModel(movieMap).then((movie) => // https://github.com/node-work/dom-to-model/blob/development/lib/fixtures/movie.js
-```
+const starWarsMovie = await domToModel(starWarsMovieMap);
 
-### Movie Collection
-<a href="https://github.com/node-work/dom-to-model/blob/development/lib/fixtures/moviesReleasedOn2000.json">imdb.com Movies released on 2000 map</a>
-
-```js
-const movieCollectionMap = require('./lib/fixtures/moviesReleasedOn2000');
-
-domToModel(movieCollectionMap).then((movies) => // https://github.com/node-work/dom-to-model/blob/development/lib/fixtures/movieCollection.js
+// https://github.com/node-work/dom-to-model/blob/master/test/fixtures/movie.js
 ```
 
 ## Build
