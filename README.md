@@ -491,7 +491,7 @@ var domToModel = require('dom-to-model');
 })();
 ```
 
-should outout
+should output
 
 ```
 [
