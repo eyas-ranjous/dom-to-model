@@ -1,6 +1,6 @@
 {
   "name": "dom-to-model",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "maps a page dom content to a data model",
   "main": "index.js",
   "directories": {
@@ -25,7 +25,8 @@
   "dependencies": {
     "ajv": "^6.12.2",
     "jquery": "^3.5.1",
-    "jsdom": "^16.2.2"
+    "jsdom": "^16.2.2",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
