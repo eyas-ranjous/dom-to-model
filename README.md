@@ -474,7 +474,7 @@ should output
 
 ### Example: Model Collection
 
-I built a model collection map for the movies that were released on year 2000.
+I built a model collection map for the movies that were released on year 2000. <a href="https://github.com/node-work/dom-to-model/blob/master/test/fixtures/moviesReleasedOn2000.json">here</a>
 
 ```js
 var fetch = require('node-fetch');
