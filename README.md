@@ -485,9 +485,9 @@ var domToModel = require('dom-to-model');
     'https://raw.githubusercontent.com/node-work/dom-to-model/master/test/fixtures/titlesReleasedOn2000.json'
   );
 
-  const moviesReleasedOn2000Map = await jsonContent.json();
+  const titlesReleasedOn2000Map = await jsonContent.json();
 
-  console.log(await domToModel(moviesReleasedOn2000Map)) 
+  console.log(await domToModel(titlesReleasedOn2000Map)) 
 })();
 ```
 
