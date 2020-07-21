@@ -412,29 +412,32 @@ defines a model collection map by using the same schema of a list prop combined 
 ## domToModel(modelMap[, url])
 After building your model maps, you can use the library main function to load dom into models.
 
-### Example
+### Example: Single Model
 
 Translating imdb movie page into a Movie json model.
 
 I created a dom map to the movie <a href="https://github.com/node-work/dom-to-model/blob/master/test/fixtures/imdbMovieMap.json">here</a>
 
-install `node-fetch` & `dom-to-model` and copy-paste the below code in your cmd, and give it some time to retrieve content!
+install `node-fetch` & `dom-to-model` and copy-paste the below code in your node REPL, and give it some time to retrieve content!
 
 ```js
-const fetch = require('node-fetch');
-const domToModel = require('dom-to-model');
+var fetch = require('node-fetch');
+var domToModel = require('dom-to-model');
 
 (async () => {
-  const response = await fetch(
+  const jsonContent = await fetch(
     'https://raw.githubusercontent.com/node-work/dom-to-model/master/test/fixtures/imdbMovieMap.json'
   );
 
-  const starWarsMovieMap = JSON.parse(await response.text());
-    
+  const starWarsMovieMap = await jsonContent.json();
+
   console.log(await domToModel(starWarsMovieMap)) 
 })();
+```
 
-/*
+should output
+
+```
 {
   id: 'tt0076759',
   title: 'Star Wars: Episode IV - A New Hope',
@@ -467,7 +470,60 @@ const domToModel = require('dom-to-model');
     { actor: 'Drewe Henley', role: 'Red Leader' }
   ]
 }
-*/
+```
+
+### Example: Model Collection
+
+I built a model collection map for the movies that were released on year 2000.
+
+```js
+var fetch = require('node-fetch');
+var domToModel = require('./index');
+
+(async () => {
+  const jsonContent = await fetch(
+    'https://raw.githubusercontent.com/node-work/dom-to-model/master/test/fixtures/moviesReleasedOn2000.json'
+  );
+
+  const moviesReleasedOn2000Map = await jsonContent.json();
+
+  console.log(await domToModel(moviesReleasedOn2000Map)) 
+})();
+```
+
+should outout
+
+```
+[
+  {
+    title: 'Gilmore Girls',
+    runtime: '44 min',
+    description: 'A dramedy centering around the relationship between a thirtysomething single mother and her teen daughter living in Stars Hollow, Connecticut.'
+  },
+  {
+    title: 'Gladiator',
+    runtime: '155 min',
+    description: 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.'
+  },
+  {
+    title: 'CSI: Crime Scene Investigation',
+    runtime: '60 min',
+    description: 'An elite team of police forensic evidence investigation experts work their cases in Las Vegas.'
+  },
+  {
+    title: 'Curb Your Enthusiasm',
+    runtime: '28 min',
+    description: 'The life and times of  and the predicaments he gets himself into with his friends and complete strangers.'
+  },
+  {
+    title: 'Almost Famous',
+    runtime: '122 min',
+    description: 'A high-school boy is given the chance to write a story for Rolling Stone Magazine about an up-and-coming rock band as he accompanies them on their concert tour.'
+  },
+  .
+  .
+  .
+]
 ```
 
 ## Build
