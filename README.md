@@ -418,7 +418,7 @@ Translating imdb movie page into a Movie json model.
 
 I created a dom map to the movie <a href="https://github.com/node-work/dom-to-model/blob/master/test/fixtures/imdbMovieMap.json">here</a>
 
-install `node-fetch` & `dom-to-model` and copy-paste the below code in your node REPL, and give it some time to retrieve content!
+You can run the code below by installing `node-fetch` & `dom-to-model` globally, and having your `NODE_PATH` pointing to the global modules, then copy-paste this code in your node REPL, and give it some time to retrieve content.
 
 ```js
 var fetch = require('node-fetch');
