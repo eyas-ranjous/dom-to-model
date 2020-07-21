@@ -474,7 +474,7 @@ should output
 
 ### Example: Model Collection
 
-I built a model collection map for the titles that were released on year 2000. <a href="https://github.com/node-work/dom-to-model/blob/master/test/fixtures/moviesReleasedOn2000.json">here</a>
+I built a model collection map for the titles that were released on year 2000. <a href="https://github.com/node-work/dom-to-model/blob/master/test/fixtures/titlesReleasedOn2000.json">here</a>
 
 ```js
 var fetch = require('node-fetch');
@@ -482,7 +482,7 @@ var domToModel = require('dom-to-model');
 
 (async () => {
   const jsonContent = await fetch(
-    'https://raw.githubusercontent.com/node-work/dom-to-model/master/test/fixtures/moviesReleasedOn2000.json'
+    'https://raw.githubusercontent.com/node-work/dom-to-model/master/test/fixtures/titlesReleasedOn2000.json'
   );
 
   const moviesReleasedOn2000Map = await jsonContent.json();
