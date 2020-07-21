@@ -1,7 +1,7 @@
 const { assert } = require('chai');
 const domToModel = require('../lib/domToModel');
 const imdbMovieMap = require('./fixtures/imdbMovieMap');
-const imdbMovies2000Map = require('./fixtures/moviesReleasedOn2000');
+const titlesReleasedOn2000Map = require('./fixtures/titlesReleasedOn2000');
 const movieData = require('./fixtures/movie');
 
 describe('domToModel(modelMap[, url])', () => {
@@ -11,7 +11,7 @@ describe('domToModel(modelMap[, url])', () => {
   )).timeout(15000);
 
   it('map dom to a model collection', () => (
-    domToModel(imdbMovies2000Map)
+    domToModel(titlesReleasedOn2000Map)
       .then((movies) => assert.isAbove(movies.length, 0))
   )).timeout(15000);
 
