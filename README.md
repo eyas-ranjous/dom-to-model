@@ -18,7 +18,7 @@ It acts like an API adapter for an existing website and allows reconstructing a 
   * [Nested Model Collection Prop Map](#nested-model-collection-prop-map)
 * [Model Map](#model-map)
 * [Model Collection Map](#model-collection-map)
-* [domToModel(modelMap[, url])](#domtomodelmodelmap-url)
+* [domToModel(url, modelMap)](#domtomodelurl-modelmap)
 * [Build](#build)
 * [License](#license)
 
@@ -273,8 +273,7 @@ defines the whole model map that composes model prop maps.
 ##### Schema
 ```json
 {
-  "url": "http://optiona-url-for-web-page",
-  "modelType": "single",
+  "mapType": "model",
   "props": {
     "propName1": {
       "propType": "value",
@@ -308,8 +307,7 @@ defines the whole model map that composes model prop maps.
 
 ```json
 {
-  "url": "http://optional-url-for-web-page",
-  "modelType": "single",
+  "mapType": "model",
   "props": {
     "name": {
       "propType": "value",
@@ -342,8 +340,7 @@ defines a model collection map by using the same schema of a list prop combined 
 ##### Schema
 ```json
 {
-  "url": "http://optiona-url-for-web-page",
-  "modelType": "collection",
+  "mapType": "collection",
   "itemPath": "#path-to-collection-model-item",
   "itemMap": {
     "props": {
@@ -385,8 +382,7 @@ defines a model collection map by using the same schema of a list prop combined 
 
 ```json
 {
-  "url": "http://optional-url-for-web-page",
-  "modelType": "collection",
+  "mapType": "collection",
   "itemPath": "ul.employees li.employee",
   "itemMap": {
     "props": {
@@ -409,121 +405,127 @@ defines a model collection map by using the same schema of a list prop combined 
 }
 ```
 
-## domToModel(modelMap[, url])
-After building your model maps, you can use the library main function to load dom into models.
+## domToModel(url, modelMap)
+After building your model maps, you can use the library main function to load dom into models. It accepts the page url that contains the dom and a model json map.
 
-### Example: Single Model
-
-Translating imdb movie page into a Movie json model.
-
-I created a dom map to the movie <a href="https://github.com/eyas-ranjous/dom-to-model/blob/master/test/fixtures/imdbMovieMap.json">here</a>
-
-You can run the code below by installing `node-fetch` & `dom-to-model` globally, and having your `NODE_PATH` pointing to the global modules, then copy-paste this code in your node REPL, and give it some time to retrieve content.
-
+#### Mapping a model
 ```js
-var fetch = require('node-fetch');
-var domToModel = require('dom-to-model');
+const { domToModel } = require('dom-to-model');
 
-(async () => {
-  const jsonContent = await fetch(
-    'https://raw.githubusercontent.com/eyas-ranjous/dom-to-model/master/test/fixtures/imdbMovieMap.json'
-  );
+const modelMap = require('path_to_model_map');
 
-  const starWarsMovieMap = await jsonContent.json();
+const url = 'http://url_to_dom';
 
-  console.log(await domToModel(starWarsMovieMap)) 
-})();
+const model = await domToModel(url, modelMap);
 ```
 
-should output
+#### Mapping a collection
+```js
+const { domToModel } = require('dom-to-model');
 
+const collectionMap = require('path_to_collection_map');
+
+const url = 'http://url_to_dom';
+
+const models = await domToModel(url, collectionMap);
 ```
+
+#### Demo: Mapping imdb movies
+I built a small demo for the project in <a target="_blank" href="https://github.com/eyas-ranjous/dom-to-model/blob/master/demo/index.js">here</a> you can use in node REPL like below:
+
+##### IMDB Movie Model
+
+```sh
+const { demo: { imdbMovie } } = require('dom-to-model');
+
+imdbMovie('https://www.imdb.com/title/tt0232500/');
+```
+
+will output
+
+```json
 {
-  id: 'tt0076759',
-  title: 'Star Wars: Episode IV - A New Hope',
-  originalTitle: 'Star Wars',
-  year: 1977,
-  description: "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
-  duration: '2h 1min',
-  releaseDate: '25 May 1977 (USA)',
-  storyLine: 'The Imperial Forces, under orders from cruel Darth Vader, hold Princess Leia hostage in their efforts to quell the rebellion against the Galactic Empire. Luke Skywalker and Han Solo, captain of the Millennium Falcon, work together with the companionable droid duo R2-D2 and C-3PO to rescue the beautiful princess, help the Rebel Alliance and restore freedom and justice to the Galaxy.',
+  id: 'tt0232500',
+  title: 'The Fast and the Furious',
+  originalTitle: null,
+  year: 2001,
+  description: "Los Angeles police officer Brian O'Conner must decide where his loyalty really lies when he becomes enamored with the street racing world he has been sent undercover to destroy.",
+  duration: '1h 46min',
+  releaseDate: '22 June 2001 (USA)',
+  storyLine: "Los Angeles street racer Dominic Toretto falls under the suspicion of the LAPD as a string of high-speed electronics truck robberies rocks the area. Brian O'Connor, an officer of the LAPD, joins the ranks of Toretto's highly skilled racing crew undercover to convict Toretto. However, O'Connor finds himself both enamored with this new world and in love with Toretto's sister, Mia. As a rival racing crew gains strength, O'Connor must decide where his loyalty really lies.",
   boxOffice: {
-    budget: '$11,000,000',
-    oppeningWeekendUsa: '$1,554,475,',
-    grossUsa: '$460,998,507'
+    budget: '$38,000,000',
+    oppeningWeekendUsa: '$40,089,015,',
+    grossUsa: '$144,533,925'
   },
   cast: [
-    { actor: 'Mark Hamill', role: 'Luke Skywalker' },
-    { actor: 'Harrison Ford', role: 'Han Solo' },
-    { actor: 'Carrie Fisher', role: 'Princess Leia Organa' },
-    { actor: 'Peter Cushing', role: 'Grand Moff Tarkin' },
-    { actor: 'Alec Guinness', role: 'Ben Obi-Wan Kenobi' },
-    { actor: 'Anthony Daniels', role: 'C-3PO' },
-    { actor: 'Kenny Baker', role: 'R2-D2' },
-    { actor: 'Peter Mayhew', role: 'Chewbacca' },
-    { actor: 'David Prowse', role: 'Darth Vader' },
-    { actor: 'Phil Brown', role: 'Uncle Owen' },
-    { actor: 'Shelagh Fraser', role: 'Aunt Beru' },
-    { actor: 'Jack Purvis', role: 'Chief Jawa' },
-    { actor: 'Alex McCrindle', role: 'General Dodonna' },
-    { actor: 'Eddie Byrne', role: 'General Willard' },
-    { actor: 'Drewe Henley', role: 'Red Leader' }
+    { actor: 'Paul Walker', role: "Brian O'Conner" },
+    { actor: 'Vin Diesel', role: 'Dominic Toretto' },
+    { actor: 'Michelle Rodriguez', role: 'Letty' },
+    { actor: 'Jordana Brewster', role: 'Mia Toretto' },
+    { actor: 'Rick Yune', role: 'Johnny Tran' },
+    { actor: 'Chad Lindberg', role: 'Jesse' },
+    { actor: 'Johnny Strong', role: 'Leon' },
+    { actor: 'Matt Schulze', role: 'Vince' },
+    { actor: 'Ted Levine', role: 'Sgt. Tanner' },
+    { actor: 'Ja Rule', role: 'Edwin' },
+    { actor: 'Vyto Ruginis', role: 'Harry' },
+    { actor: 'Thom Barry', role: 'Agent Bilkins' },
+    { actor: 'Stanton Rutledge', role: 'Muse' },
+    { actor: 'Noel Gugliemi', role: 'Hector' },
+    { actor: 'R.J. de Vera', role: 'Danny Yamato' }
   ]
 }
 ```
 
-### Example: Model Collection
+##### IMDB Movie Titles Collection
 
-I built a model collection map for the titles that were released on year 2000. <a href="https://github.com/eyas-ranjous/dom-to-model/blob/master/test/fixtures/titlesReleasedOn2000.json">here</a>
+```sh
+const { demo: { imdbMovieTitles } } = require('dom-to-model');
 
-```js
-var fetch = require('node-fetch');
-var domToModel = require('dom-to-model');
-
-(async () => {
-  const jsonContent = await fetch(
-    'https://raw.githubusercontent.com/eyas-ranjous/dom-to-model/master/test/fixtures/titlesReleasedOn2000.json'
-  );
-
-  const titlesReleasedOn2000Map = await jsonContent.json();
-
-  console.log(await domToModel(titlesReleasedOn2000Map)) 
-})();
+imdbMovieTitles('https://www.imdb.com/search/title/?year=2019');
 ```
 
-should output
+will output
 
-```
-[
+```json
+ [
   {
-    title: 'Gilmore Girls',
-    runtime: '44 min',
-    description: 'A dramedy centering around the relationship between a thirtysomething single mother and her teen daughter living in Stars Hollow, Connecticut.'
+    title: 'The Mandalorian',
+    runtime: '40 min',
+    description: 'The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.'
   },
   {
-    title: 'Gladiator',
-    runtime: '155 min',
-    description: 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.'
-  },
-  {
-    title: 'CSI: Crime Scene Investigation',
+    title: 'The Boys',
     runtime: '60 min',
-    description: 'An elite team of police forensic evidence investigation experts work their cases in Las Vegas.'
+    description: 'A group of vigilantes set out to take down corrupt superheroes who abuse their superpowers.'
   },
   {
-    title: 'Curb Your Enthusiasm',
-    runtime: '28 min',
-    description: 'The life and times of  and the predicaments he gets himself into with his friends and complete strangers.'
+    title: 'His Dark Materials',
+    runtime: '60 min',
+    description: "A young girl is destined to liberate her world from the grip of the Magisterium which represses people's ties to magic and their animal spirits known as daemons."
   },
   {
-    title: 'Almost Famous',
-    runtime: '122 min',
-    description: 'A high-school boy is given the chance to write a story for Rolling Stone Magazine about an up-and-coming rock band as he accompanies them on their concert tour.'
+    title: 'Virgin River',
+    runtime: '44 min',
+    description: 'After seeing an ad for a midwife, a recently widowed big-city nurse moves to the redwood forests of northern California, where she meets an intriguing man.'
   },
-  .
-  .
-  .
-]
+  {
+    title: 'Mosul',
+    runtime: '101 min',
+    description: 'A police unit from Mosul fight to liberate the Iraqi city from thousands of ISIS militants.'
+  },
+  {
+    title: 'Knives Out',
+    runtime: '130 min',
+    description: 'A detective investigates the death of a patriarch of an eccentric, combative family.'
+  },
+  {
+    title: 'The Witcher',
+    runtime: '60 min',
+    description: 'Geralt of Rivia, a solitary monster hunter, struggles to find his place in a world where people often prove more wicked than beasts.'
+  },
+  // ...
 ```
 
 ## Build
