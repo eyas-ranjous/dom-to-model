@@ -29,12 +29,12 @@ npm install --save dom-to-model
 
 ## require
 ```js
-const domToModel = require('dom-to-model');
+const { domToModel } = require('dom-to-model');
 ```
 
 ## import
 ```js
-import domToModel from 'dom-to-model';
+import { domToModel } from 'dom-to-model';
 ```
 
 ## Intro
