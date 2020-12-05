@@ -4,7 +4,7 @@
 
 It acts like an API adapter for an existing website and allows reconstructing a data model from its page content by mapping DOM elements to user-defined models. It supports mapping a single model or collection, as well as recursive mapping for props that represent other models or collections.
 
-<img width="860" alt="d" src="https://user-images.githubusercontent.com/6517308/82919798-1a850200-9f3c-11ea-874a-50ef723b23b2.png">
+<img width="860" alt="d" src="https://user-images.githubusercontent.com/6517308/101259731-3b4ec100-36f0-11eb-96b5-7662ea74b95c.png">
 
 # Table of Contents
 * [Install](#install)
