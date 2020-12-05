@@ -435,7 +435,7 @@ I built a small demo for the project in <a target="_blank" href="https://github.
 
 ##### IMDB Movie Model
 
-```sh
+```js
 const { demo: { imdbMovie } } = require('dom-to-model');
 
 imdbMovie('https://www.imdb.com/title/tt0232500/');
@@ -480,7 +480,7 @@ will log
 
 ##### IMDB Movie Titles Collection
 
-```sh
+```js
 const { demo: { imdbMovieTitles } } = require('dom-to-model');
 
 imdbMovieTitles('https://www.imdb.com/search/title/?year=2019');
