@@ -412,7 +412,7 @@ After building your model maps, you can use the library main function to load do
 ```js
 const { domToModel } = require('dom-to-model');
 
-const modelMap = require('path_to_model_map');
+const modelMap = require('./path_to_model_map');
 
 const url = 'http://url_to_dom';
 
@@ -423,7 +423,7 @@ const model = await domToModel(url, modelMap);
 ```js
 const { domToModel } = require('dom-to-model');
 
-const collectionMap = require('path_to_collection_map');
+const collectionMap = require('./path_to_collection_map');
 
 const url = 'http://url_to_dom';
 
