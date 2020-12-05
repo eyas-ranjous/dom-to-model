@@ -1,6 +1,5 @@
 {
-  "url": "https://www.imdb.com/search/title/?year=2000",
-  "modelType": "collection",
+  "mapType": "collection",
   "itemPath": ".lister-item .lister-item-content",
   "itemMap": {
     "props": {

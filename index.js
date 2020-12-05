@@ -1,3 +1,6 @@
-const domToModel = require('./lib/domToModel');
+const { domToModel } = require('./lib/domToModel');
+const { demo } = require('./demo');
 
-module.exports = domToModel;
+exports.domToModel = domToModel;
+
+exports.demo = demo;

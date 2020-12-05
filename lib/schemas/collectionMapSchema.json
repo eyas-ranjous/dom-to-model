@@ -1,11 +1,11 @@
 {
-  "description": "model dom-map schema",
+  "description": "collection map schema",
   "type": "object",
   "properties": {
     "url": {
       "type": "string"
     },
-    "modelType": {
+    "mapType": {
       "type": "string",
       "tconst": "collection"
     },

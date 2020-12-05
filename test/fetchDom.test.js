@@ -1,9 +1,9 @@
 const { assert } = require('chai');
-const fetchDom = require('../lib/fetchDom');
+const { fetchDom } = require('../lib/fetchDom');
 
 describe('.fetchDom(url)', () => {
-  it('fetchs the dom content of a page and resolve with jQuery', () => (
-    fetchDom('https://www.lipsum.com')
-      .then(($) => assert.equal($('#Inner h1:first').text(), 'Lorem Ipsum'))
-  ));
+  it('fetch dom of a page and resolve with jQuery', async () => {
+    const jQuery = await fetchDom('https://www.lipsum.com');
+    assert.equal(jQuery('#Inner h1:first').text(), 'Lorem Ipsum');
+  });
 });

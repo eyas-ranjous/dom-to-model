@@ -1,5 +1,5 @@
 {
-  "description": "model prop dom-map schema",
+  "description": "model prop map schema",
   "type": "object",
   "properties": {
     "propType": {

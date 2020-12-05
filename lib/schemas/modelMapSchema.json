@@ -1,10 +1,10 @@
 {
-  "description": "model dom-map schema",
+  "description": "model map schema",
   "type": "object",
   "properties": {
-    "modelType": {
+    "mapType": {
       "type": "string",
-      "tconst": "single"
+      "tconst": "model"
     },
     "url": {
       "type": "string"
