@@ -48,7 +48,7 @@ Defines the model property map schema. It has 4 types:
 map prop to the content of an element
 
 ##### Schema
-```json
+```
 {
   "propType": "value",
   "map": {
@@ -64,7 +64,7 @@ map prop to the content of an element
 <span id="test1234">test data</span>
 ```
 
-```json
+```
 {
   "propType": "value",
   "map": {
@@ -77,7 +77,7 @@ map prop to the content of an element
 map prop to a data attribute
 
 ##### Schema
-```json
+```
 {
   "propType": "value",
   "map": {
@@ -94,7 +94,7 @@ map prop to a data attribute
 <span id="test" data-content="1234">test data</span>
 ```
 
-```json
+```
 {
   "propType": "value",
   "map": {
@@ -110,7 +110,7 @@ map prop to a data attribute
 map a prop to a list of values
 
 ##### Schema
-```json
+```
 {
   "propType": "list",
   "map": {
@@ -130,7 +130,7 @@ map a prop to a list of values
 </ul>
 ```
 
-```json
+```
 {
   "propType": "list",
   "map": {
@@ -145,7 +145,7 @@ map a prop to a list of values
 a model prop can be another model
 
 ##### Schema
-```json
+```
 {
   "propType": "model",
   "map": {
@@ -170,7 +170,7 @@ a model prop can be another model
 </div>
 ```
 
-```json
+```
 {
   "propType": "model",
   "map": {
@@ -199,7 +199,7 @@ a model prop can be another model
 a model prop can be a collection of other models.
 
 ##### Schema
-```json
+```
 {
   "propType": "list",
   "map": {
@@ -239,7 +239,7 @@ a model prop can be a collection of other models.
 </ul>
 ```
 
-```json
+```
 {
   "propType": "list",
   "map": {
@@ -271,7 +271,7 @@ a model prop can be a collection of other models.
 defines the whole model map that composes model prop maps.
 
 ##### Schema
-```json
+```
 {
   "mapType": "model",
   "props": {
@@ -305,7 +305,7 @@ defines the whole model map that composes model prop maps.
 </ul>
 ```
 
-```json
+```
 {
   "mapType": "model",
   "props": {
@@ -338,7 +338,7 @@ defines the whole model map that composes model prop maps.
 defines a model collection map by using the same schema of a list prop combined with the model map.
 
 ##### Schema
-```json
+```
 {
   "mapType": "collection",
   "itemPath": "#path-to-collection-model-item",
@@ -380,7 +380,7 @@ defines a model collection map by using the same schema of a list prop combined 
 </ul>
 ```
 
-```json
+```
 {
   "mapType": "collection",
   "itemPath": "ul.employees li.employee",
