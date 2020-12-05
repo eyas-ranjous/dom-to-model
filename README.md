@@ -431,7 +431,7 @@ const models = await domToModel(url, collectionMap);
 ```
 
 #### Demo: Mapping imdb movies
-I built a small demo for the project in <a target="_blank" href="https://github.com/eyas-ranjous/dom-to-model/blob/master/demo/index.js">here</a> you can use in node REPL like below:
+I built a small demo for the project in <a target="_blank" href="https://github.com/eyas-ranjous/dom-to-model/blob/master/demo/index.js">here</a> you can use like below:
 
 ##### IMDB Movie Model
 
@@ -441,7 +441,7 @@ const { demo: { imdbMovie } } = require('dom-to-model');
 imdbMovie('https://www.imdb.com/title/tt0232500/');
 ```
 
-will output
+will log
 
 ```sh
 {
@@ -486,7 +486,7 @@ const { demo: { imdbMovieTitles } } = require('dom-to-model');
 imdbMovieTitles('https://www.imdb.com/search/title/?year=2019');
 ```
 
-will output
+will log
 
 ```sh
  [
