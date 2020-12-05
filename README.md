@@ -534,7 +534,7 @@ will log
 grunt build
 ```
 
-```sh
+```
 Running "eslint:src" (eslint) task
 
 Running "nyc_mocha:target" (nyc_mocha) task
