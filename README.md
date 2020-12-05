@@ -534,5 +534,64 @@ will log
 grunt build
 ```
 
+```sh
+Running "eslint:src" (eslint) task
+
+Running "nyc_mocha:target" (nyc_mocha) task
+
+
+  domToModel(modelMap[, url])
+    ✓ map dom to a model object (7508ms)
+    ✓ map dom to a model collection (4761ms)
+    ✓ throw an error if url is missing
+    ✓ throw an error model map is missing
+    ✓ throw an error model type is unknown
+
+  .fetchDom(url)
+    ✓ fetch dom of a page and resolve with jQuery (1247ms)
+
+  mapCollection($, modelMap)
+    ✓ throw an error if prop data map is not a valid scheme (85ms)
+    ✓ map dom to a model object (97ms)
+
+  mapProp/mapElementToValue(element, dataType, dataAttr)
+    ✓ return null when element does not exist
+    ✓ map an input element
+    ✓ map a text element
+    ✓ map an element with number value
+    ✓ map an element with boolean value (157ms)
+    ✓ map a prop from a data attribute
+
+  mapModel($, modelMap[, element])
+    ✓ throw an error if prop data map is not a valid scheme (44ms)
+    ✓ map dom to a model object (311ms)
+
+  mapPropToElement($, propMap)
+    ✓ throw an error if prop data map is not a valid scheme (65ms)
+    ✓ map a prop from a text element (44ms)
+    ✓ map a prop from an input element (38ms)
+    ✓ map a prop from a data attribute (80ms)
+    ✓ map a prop from a list of elements to an array (48ms)
+    ✓ return a prop to an empty array if list does not exist (47ms)
+    ✓ maps a prop from an element
+
+
+  23 passing (15s)
+
+----------------------|---------|----------|---------|---------|-------------------
+File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------------|---------|----------|---------|---------|-------------------
+All files             |      97 |    91.49 |     100 |    97.7 |                   
+ domToModel.js        |   94.44 |    91.67 |     100 |   93.75 | 37                
+ fetchDom.js          |     100 |      100 |     100 |     100 |                   
+ mapCollection.js     |   92.86 |       75 |     100 |     100 | 24                
+ mapElementToValue.js |     100 |      100 |     100 |     100 |                   
+ mapModel.js          |     100 |      100 |     100 |     100 |                   
+ mapPropToElement.js  |    97.3 |    88.24 |     100 |   96.88 | 79                
+----------------------|---------|----------|---------|---------|-------------------
+
+Done.
+```
+
 ## License
 The ISC License. Full License is [here](https://github.com/eyas-ranjous/dom-to-model/blob/master/LICENSE)
