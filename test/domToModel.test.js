@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-const domToModel = require('../lib/domToModel');
+const { domToModel } = require('../lib/domToModel');
 const imdbMovieMap = require('./fixtures/imdbMovieMap');
 const titlesReleasedOn2000Map = require('./fixtures/titlesReleasedOn2000');
 const movieData = require('./fixtures/movie');
@@ -23,6 +23,6 @@ describe('domToModel(modelMap[, url])', () => {
 
   it('throw an error model type is unknown', () => (
     domToModel({ url: 'test', type: 'test', props: {} })
-      .catch((error) => assert.equal(error.message, 'unknow model type'))
+      .catch((error) => assert.equal(error.message, 'unknow model map type'))
   ));
 });

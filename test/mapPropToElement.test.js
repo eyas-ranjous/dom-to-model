@@ -1,19 +1,19 @@
 const { assert } = require('chai');
 const { JSDOM } = require('jsdom');
 const jquery = require('jquery');
-const mapProp = require('../../../lib/mapModel/mapProp');
+const { mapPropToElement } = require('../lib/mapPropToElement');
 
-describe('mapProp/mapProp($, propMap)', () => {
+describe('mapPropToElement($, propMap)', () => {
   it('throw an error if prop data map is not a valid scheme', () => {
     const $ = jquery(new JSDOM('<div></div>').window);
     assert.throw(
-      () => mapProp($, {}),
+      () => mapPropToElement($, {}),
       Error,
       'should have required property \'propType\''
     );
 
     assert.throw(
-      () => mapProp($, { propType: 'value' }),
+      () => mapPropToElement($, { propType: 'value' }),
       Error,
       'should have required property \'map\''
     );
@@ -28,7 +28,7 @@ describe('mapProp/mapProp($, propMap)', () => {
         path: '#test'
       }
     };
-    assert.strictEqual(mapProp($, propMap), 123);
+    assert.strictEqual(mapPropToElement($, propMap), 123);
   });
 
   it('map a prop from an input element', () => {
@@ -42,7 +42,7 @@ describe('mapProp/mapProp($, propMap)', () => {
         path: '.test'
       }
     };
-    assert.strictEqual(mapProp($, propMap), 'test');
+    assert.strictEqual(mapPropToElement($, propMap), 'test');
   });
 
   it('map a prop from a data attribute', () => {
@@ -57,7 +57,7 @@ describe('mapProp/mapProp($, propMap)', () => {
         dataAttr: 'val'
       }
     };
-    assert.strictEqual(mapProp($, propMap), 'test-data');
+    assert.strictEqual(mapPropToElement($, propMap), 'test-data');
   });
 
   it('map a prop from a list of elements to an array', () => {
@@ -71,7 +71,7 @@ describe('mapProp/mapProp($, propMap)', () => {
         itemPath: 'ul.test li'
       }
     };
-    assert.deepEqual(mapProp($, propMap), [1, 2, 3]);
+    assert.deepEqual(mapPropToElement($, propMap), [1, 2, 3]);
   });
 
   it('return a prop to an empty array if list does not exist', () => {
@@ -83,7 +83,7 @@ describe('mapProp/mapProp($, propMap)', () => {
         itemPath: 'ul.test li'
       }
     };
-    assert.deepEqual(mapProp($, propMap), []);
+    assert.deepEqual(mapPropToElement($, propMap), []);
   });
 
   it('maps a prop from an element', () => {
@@ -97,6 +97,6 @@ describe('mapProp/mapProp($, propMap)', () => {
         path: '.num'
       }
     };
-    assert.strictEqual(mapProp($, propMap, $('#test')), 123);
+    assert.strictEqual(mapPropToElement($, propMap, $('#test')), 123);
   });
 });

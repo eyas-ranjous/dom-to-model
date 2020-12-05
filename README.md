@@ -1,6 +1,6 @@
 # dom-to-model
 
-[![build:?](https://travis-ci.org/node-work/dom-to-model.svg?branch=master)](https://travis-ci.org/node-work/dom-to-model) [![npm](https://img.shields.io/badge/node-%3E=%2010.0-blue.svg)](https://www.npmjs.com/package/dom-to-model) [![npm](https://img.shields.io/npm/v/dom-to-model.svg)](https://www.npmjs.com/package/dom-to-model) [![npm](https://img.shields.io/npm/dm/dom-to-model.svg)](https://www.npmjs.com/package/dom-to-model)
+[![build:?](https://travis-ci.org/eyas-ranjous/dom-to-model.svg?branch=master)](https://travis-ci.org/eyas-ranjous/dom-to-model) [![npm](https://img.shields.io/badge/node-%3E=%2010.0-blue.svg)](https://www.npmjs.com/package/dom-to-model) [![npm](https://img.shields.io/npm/v/dom-to-model.svg)](https://www.npmjs.com/package/dom-to-model) [![npm](https://img.shields.io/npm/dm/dom-to-model.svg)](https://www.npmjs.com/package/dom-to-model)
 
 It acts like an API adapter for an existing website and allows reconstructing a data model from its page content by mapping DOM elements to user-defined models. It supports mapping a single model or collection, as well as recursive mapping for props that represent other models or collections.
 
@@ -416,7 +416,7 @@ After building your model maps, you can use the library main function to load do
 
 Translating imdb movie page into a Movie json model.
 
-I created a dom map to the movie <a href="https://github.com/node-work/dom-to-model/blob/master/test/fixtures/imdbMovieMap.json">here</a>
+I created a dom map to the movie <a href="https://github.com/eyas-ranjous/dom-to-model/blob/master/test/fixtures/imdbMovieMap.json">here</a>
 
 You can run the code below by installing `node-fetch` & `dom-to-model` globally, and having your `NODE_PATH` pointing to the global modules, then copy-paste this code in your node REPL, and give it some time to retrieve content.
 
@@ -426,7 +426,7 @@ var domToModel = require('dom-to-model');
 
 (async () => {
   const jsonContent = await fetch(
-    'https://raw.githubusercontent.com/node-work/dom-to-model/master/test/fixtures/imdbMovieMap.json'
+    'https://raw.githubusercontent.com/eyas-ranjous/dom-to-model/master/test/fixtures/imdbMovieMap.json'
   );
 
   const starWarsMovieMap = await jsonContent.json();
@@ -474,7 +474,7 @@ should output
 
 ### Example: Model Collection
 
-I built a model collection map for the titles that were released on year 2000. <a href="https://github.com/node-work/dom-to-model/blob/master/test/fixtures/titlesReleasedOn2000.json">here</a>
+I built a model collection map for the titles that were released on year 2000. <a href="https://github.com/eyas-ranjous/dom-to-model/blob/master/test/fixtures/titlesReleasedOn2000.json">here</a>
 
 ```js
 var fetch = require('node-fetch');
@@ -482,7 +482,7 @@ var domToModel = require('dom-to-model');
 
 (async () => {
   const jsonContent = await fetch(
-    'https://raw.githubusercontent.com/node-work/dom-to-model/master/test/fixtures/titlesReleasedOn2000.json'
+    'https://raw.githubusercontent.com/eyas-ranjous/dom-to-model/master/test/fixtures/titlesReleasedOn2000.json'
   );
 
   const titlesReleasedOn2000Map = await jsonContent.json();
@@ -533,4 +533,4 @@ grunt build
 ```
 
 ## License
-The ISC License. Full License is [here](https://github.com/node-work/dom-to-model/blob/master/LICENSE)
+The ISC License. Full License is [here](https://github.com/eyas-ranjous/dom-to-model/blob/master/LICENSE)

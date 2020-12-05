@@ -1,6 +1,6 @@
 {
   "url": "http://www.imdb.com/title/tt0076759",
-  "modelType": "single",
+  "mapType": "model",
   "props": {
     "id": {
       "propType": "value",

@@ -37,8 +37,10 @@
     "grunt-eslint": "^22.0.0",
     "grunt-mocha-istanbul": "^5.0.2",
     "grunt-mocha-test": "^0.13.3",
+    "grunt-nyc-mocha": "0.0.2",
     "istanbul": "^0.4.5",
     "mocha": "^6.2.2",
+    "nyc": "^15.1.0",
     "sinon": "^9.0.2"
   }
 }
