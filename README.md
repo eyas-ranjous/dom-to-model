@@ -443,7 +443,7 @@ imdbMovie('https://www.imdb.com/title/tt0232500/');
 
 will output
 
-```json
+```sh
 {
   id: 'tt0232500',
   title: 'The Fast and the Furious',
@@ -488,7 +488,7 @@ imdbMovieTitles('https://www.imdb.com/search/title/?year=2019');
 
 will output
 
-```json
+```sh
  [
   {
     title: 'The Mandalorian',
