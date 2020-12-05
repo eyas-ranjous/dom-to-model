@@ -1,6 +1,6 @@
 {
   "name": "dom-to-model",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "maps a page dom content to a data model",
   "main": "index.js",
   "directories": {
