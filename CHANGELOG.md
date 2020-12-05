@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2020-12-05
+### Changed
+- exported objects and function signature.
+
+### Fixed
+- refactor the project's code.
+
 ## [1.0.5] - 2020-07-21
 ### Fixed
 - update fixture & readme.
