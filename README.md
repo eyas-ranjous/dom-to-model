@@ -535,48 +535,43 @@ grunt build
 ```
 
 ```
-Running "eslint:src" (eslint) task
-
-Running "nyc_mocha:target" (nyc_mocha) task
-
-
-  domToModel(modelMap[, url])
-    ✓ map dom to a model object (7508ms)
-    ✓ map dom to a model collection (4761ms)
+  domToModel(url, modelMap)
+    ✓ map dom to a model object (7710ms)
+    ✓ map dom to a model collection (8842ms)
     ✓ throw an error if url is missing
     ✓ throw an error model map is missing
     ✓ throw an error model type is unknown
 
   .fetchDom(url)
-    ✓ fetch dom of a page and resolve with jQuery (1247ms)
+    ✓ fetch dom of a page and resolve with jQuery (1011ms)
 
-  mapCollection($, modelMap)
-    ✓ throw an error if prop data map is not a valid scheme (85ms)
-    ✓ map dom to a model object (97ms)
+  mapCollection(jQuery, collectionMap)
+    ✓ throw an error if prop data map is not a valid scheme (174ms)
+    ✓ map dom to a model object (277ms)
 
-  mapProp/mapElementToValue(element, dataType, dataAttr)
-    ✓ return null when element does not exist
-    ✓ map an input element
-    ✓ map a text element
-    ✓ map an element with number value
-    ✓ map an element with boolean value (157ms)
-    ✓ map a prop from a data attribute
+  mapElementToValue(element, dataType, dataAttr)
+    ✓ return null when element does not exist (109ms)
+    ✓ map an input element (98ms)
+    ✓ map a text element (127ms)
+    ✓ map an element with number value (80ms)
+    ✓ map an element with boolean value (49ms)
+    ✓ map a prop from a data attribute (101ms)
 
-  mapModel($, modelMap[, element])
-    ✓ throw an error if prop data map is not a valid scheme (44ms)
-    ✓ map dom to a model object (311ms)
+  mapModel(jQuery, modelMap)
+    ✓ throw an error if prop data map is not a valid scheme (100ms)
+    ✓ map dom to a model object (436ms)
 
-  mapPropToElement($, propMap)
-    ✓ throw an error if prop data map is not a valid scheme (65ms)
-    ✓ map a prop from a text element (44ms)
-    ✓ map a prop from an input element (38ms)
-    ✓ map a prop from a data attribute (80ms)
-    ✓ map a prop from a list of elements to an array (48ms)
-    ✓ return a prop to an empty array if list does not exist (47ms)
-    ✓ maps a prop from an element
+  mapPropToElement(jQuery, propMap)
+    ✓ throw an error if prop data map is not a valid scheme (104ms)
+    ✓ map a prop from a text element (115ms)
+    ✓ map a prop from an input element (100ms)
+    ✓ map a prop from a data attribute (87ms)
+    ✓ map a prop from a list of elements to an array (136ms)
+    ✓ return a prop to an empty array if list does not exist (120ms)
+    ✓ maps a prop from an element (130ms)
 
 
-  23 passing (15s)
+  23 passing (20s)
 
 ----------------------|---------|----------|---------|---------|-------------------
 File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
