@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.0.0] - 2020-12-05
+## [2.0.1] - 2020-06-12
+### Fixed
+- tests & jsdoc
+
+## [2.0.0] - 2020-05-12
 ### Changed
 - exported objects and function signature.
 
