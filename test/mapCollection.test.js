@@ -3,7 +3,7 @@ const { JSDOM } = require('jsdom');
 const jquery = require('jquery');
 const { mapCollection } = require('../lib/mapCollection');
 
-describe('mapCollection($, modelMap)', () => {
+describe('mapCollection(jQuery, collectionMap)', () => {
   it('throw an error if prop data map is not a valid scheme', () => {
     const $ = jquery(new JSDOM('<div></div>').window);
     assert.throw(

@@ -4,18 +4,18 @@ const imdbMovieMap = require('./fixtures/imdbMovieMap');
 const imdbMovieTitlesMap = require('./fixtures/imdbMovieTitlesMap');
 const movieData = require('./fixtures/movie');
 
-describe('domToModel(modelMap[, url])', () => {
+describe('domToModel(url, modelMap)', () => {
   it('map dom to a model object', async () => {
     const url = 'http://www.imdb.com/title/tt0076759';
     const movie = await domToModel(url, imdbMovieMap);
     assert.deepEqual(movie, movieData);
-  }).timeout(15000);
+  }).timeout(25000);
 
   it('map dom to a model collection', async () => {
     const url = 'https://www.imdb.com/search/title/?year=2000';
     const movies = await domToModel(url, imdbMovieTitlesMap);
     assert.isAbove(movies.length, 0);
-  }).timeout(15000);
+  }).timeout(25000);
 
   it('throw an error if url is missing', () => (
     domToModel().catch((error) => (

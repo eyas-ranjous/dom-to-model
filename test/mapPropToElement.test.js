@@ -3,7 +3,7 @@ const { JSDOM } = require('jsdom');
 const jquery = require('jquery');
 const { mapPropToElement } = require('../lib/mapPropToElement');
 
-describe('mapPropToElement($, propMap)', () => {
+describe('mapPropToElement(jQuery, propMap)', () => {
   it('throw an error if prop data map is not a valid scheme', () => {
     const $ = jquery(new JSDOM('<div></div>').window);
     assert.throw(
