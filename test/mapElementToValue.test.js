@@ -3,7 +3,7 @@ const { JSDOM } = require('jsdom');
 const jquery = require('jquery');
 const { mapElementToValue } = require('../lib/mapElementToValue');
 
-describe('mapProp/mapElementToValue(element, dataType, dataAttr)', () => {
+describe('mapElementToValue(element, dataType, dataAttr)', () => {
   it('return null when element does not exist', () => {
     const $ = jquery(new JSDOM('<p id="test">123</p>').window);
     assert.strictEqual(mapElementToValue($('nothing')), null);
