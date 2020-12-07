@@ -431,10 +431,10 @@ const url = 'http://url_to_dom';
 const models = await domToModel(url, collectionMap);
 ```
 
-### Demo: IMDB Movies
+## Demo: IMDB Movies
 I built a small demo for the project <a target="_blank" href="https://github.com/eyas-ranjous/dom-to-model/blob/master/demo/index.js">here</a> you can use like below:
 
-##### IMDB Movie Model
+#### IMDB Movie Model
 
 ```js
 const { demo: { imdbMovie } } = require('dom-to-model');
@@ -479,7 +479,7 @@ will log
 }
 ```
 
-##### IMDB Movie Titles Collection
+#### IMDB Movie Titles Collection
 
 ```js
 const { demo: { imdbMovieTitles } } = require('dom-to-model');
