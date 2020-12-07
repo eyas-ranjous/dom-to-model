@@ -2,18 +2,16 @@ const imdbMovieMap = require('./imdbMovieMap');
 const imdbMovieTitlesMap = require('./imdbMovieTitlesMap');
 const { domToModel } = require('../lib/domToModel');
 
-// test movie model, start wars
-const TEST_MODEL_URL = 'http://www.imdb.com/title/tt0076759';
-
-const imdbMovie = async (url = TEST_MODEL_URL) => {
+const MOVIE_ENDPOINT = 'http://www.imdb.com/title';
+const imdbMovie = async ({ id }) => {
+  const url = `${MOVIE_ENDPOINT}/${id}`;
   const movie = await domToModel(url, imdbMovieMap);
   console.log(movie);
 }
 
-// test movie titles collection, movies released in 2000
-TEST_COLLECTION_URL = 'https://www.imdb.com/search/title/?year=2000';
-
-const imdbMovieTitles = async (url = TEST_COLLECTION_URL) => {
+MOVIE_TITLES_ENDPOINT = 'https://www.imdb.com/search/title';
+const imdbMovieTitles = async ({ year }) => {
+  const url = `${MOVIE_TITLES_ENDPOINT}/?year=${year}`;
   const movies = await domToModel(url, imdbMovieTitlesMap);
   console.log(movies);
 };
